@@ -634,6 +634,50 @@ Weekly Premium Collection
 
 ---
 
+## AI & Machine Learning Architecture
+
+GigShield relies on an ensemble of specialized machine learning models rather than a single monolithic AI. This architecture ensures high-performance, domain-specific intelligence for earnings predictions, risk assessment, and fraud detection.
+
+### 1. Data Pipeline & Feature Engineering
+Before training, raw data flows through our preprocessing pipelines (`backend/ai/pipelines/`):
+- **Data Ingestion:** We aggregate multi-modal data including environmental inputs (OpenWeather, IMD, AQICN APIs), geospatial coordinates, and worker activity logs.
+- **Spatial Indexing:** Uber's **H3 Hexagonal Grid** system translates raw coordinates into standardized `micro-zones` for spatial aggregations.
+- **Feature Engineering:** We handle time-series encoding (cyclic features for time/day), missing value imputation, and correlation clustering to feed clean tensors into our models.
+
+### 2. Core Algorithms & Training Modules
+We train five specialized models, defined in `backend/ai/training/`:
+
+#### A. Earnings Boost Engine (Regression)
+- **Algorithm:** **XGBoost / LightGBM** (via scikit-learn)
+- **How it works:** Predicts zone-level earnings potential to generate actionable routing recommendations.
+- **Training:** Trained on historical platform earnings, weather, and order density. Gradient boosting builds sequential decision trees to minimize prediction errors, excelling at tabular numerical data.
+
+#### B. Disruptive Risk Forecast Model (Time-Series)
+- **Algorithm:** **Meta's Prophet**
+- **How it works:** Forecasts structural disruptions (e.g., monsoon impact) 12-72 hours in advance to provide early warnings.
+- **Training:** Learns non-linear trends from historical disruption data, capturing daily, weekly, and seasonal seasonality.
+
+#### C. Hyperlocal Zone Risk Engine (Clustering)
+- **Algorithm:** **K-Means / DBSCAN Clustering** (scikit-learn)
+- **How it works:** Groups geospatial H3 hexes with similar baseline disruption behaviors (terrain, drainage, traffic density) to establish dynamic 0-100 risk scores.
+
+#### D. Fraud & Anomaly Detection (Classification)
+- **Algorithm:** **Isolation Forest / Random Forest Classifier**
+- **How it works:** Generates the "Confidence Score" for automatic claims by detecting patterns common in GPS-spoofing or coordinated fraud rings.
+- **Training:** Trained on synthetic adversarial data and anomaly parameters (e.g., synchronized claim timing, abnormal movement physics).
+
+#### E. Dynamic Premium Pricing Model (Actuarial Regression)
+- **Algorithm:** **Generalized Linear Models (GLMs) / Ridge Regression**
+- **How it works:** Adjusts personalized weekly premiums based on a baseline risk profile plus dynamic weather/zone modifiers.
+
+### 3. Model Deployment & Inference Execution
+How the AI operates in real-time production:
+1. **Model Persistence:** During offline training, optimized models are serialized and saved via `joblib` inside `backend/ai/saved_models/`.
+2. **In‑Memory Inference:** Upon FastAPI startup, `model_loader.py` places these binaries into memory.
+3. **Live Execution:** When a worker loads the dashboard, the API fetches live geospatial and weather data, constructs a rapid feature vector, and runs inference. Real-time predictions influence the dashboard, premium adjustments, and risk routing.
+
+---
+
 ## Feature Feasibility Matrix
 
 | Feature | Tech Stack | Feasibility | Phase | Business Impact |
