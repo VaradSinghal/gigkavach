@@ -727,6 +727,8 @@ How the AI operates in real-time production:
 - [AI - documentation](https://docs.google.com/document/d/1Kt8uof4SJQFANm-42uYTDST2FZW18E_S/edit?usp=drive_link&ouid=103365249222841827513&rtpof=true&sd=true)
 - [Feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdXMbRQRbR0B1quJ1WIeyzQ2f29MloRauZCivZOZtimqRFUQQ/viewform?usp=header)
 
+- [PhaseOne - Presentation](https://youtu.be/yneZTe7to-k)
+
 <p align="center">
   <strong>GigKavach</strong> — <em>We don't ask workers to understand insurance. We ask them to trust that when the rain falls and they cannot work, GigKavach has them covered.</em>
 </p>
