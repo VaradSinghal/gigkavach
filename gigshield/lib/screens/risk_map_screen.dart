@@ -73,18 +73,28 @@ class RiskMapScreen extends StatelessWidget {
                     color: AppColors.bgDark.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Icon(Icons.map_rounded, color: AppColors.primary, size: 28),
+                  child: const Icon(
+                    Icons.map_rounded,
+                    color: AppColors.primary,
+                    size: 28,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.bgDark.withValues(alpha: 0.8),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Text(
                     'Mapbox Integration Zone',
-                    style: TextStyle(fontSize: 12, color: AppColors.textSecondary),
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
                 ),
               ],
@@ -122,7 +132,10 @@ class RiskMapScreen extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 4),
-        Text(label, style: const TextStyle(fontSize: 11, color: AppColors.textSecondary)),
+        Text(
+          label,
+          style: const TextStyle(fontSize: 11, color: AppColors.textSecondary),
+        ),
       ],
     );
   }
@@ -185,7 +198,10 @@ class RiskMapScreen extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         'Rainfall: ${zone['rain']}',
-                        style: const TextStyle(fontSize: 11, color: AppColors.textSecondary),
+                        style: const TextStyle(
+                          fontSize: 11,
+                          color: AppColors.textSecondary,
+                        ),
                       ),
                     ],
                   ),
@@ -224,11 +240,26 @@ class _HexGridPainter extends CustomPainter {
     // Draw some colored hexes to represent risk zones
     final riskPaint = Paint()..style = PaintingStyle.fill;
     final riskAreas = [
-      (Offset(size.width * 0.3, size.height * 0.4), AppColors.danger.withValues(alpha: 0.2)),
-      (Offset(size.width * 0.7, size.height * 0.3), AppColors.success.withValues(alpha: 0.2)),
-      (Offset(size.width * 0.5, size.height * 0.6), AppColors.warning.withValues(alpha: 0.2)),
-      (Offset(size.width * 0.2, size.height * 0.7), const Color(0xFFE84393).withValues(alpha: 0.2)),
-      (Offset(size.width * 0.8, size.height * 0.7), AppColors.success.withValues(alpha: 0.2)),
+      (
+        Offset(size.width * 0.3, size.height * 0.4),
+        AppColors.danger.withValues(alpha: 0.2),
+      ),
+      (
+        Offset(size.width * 0.7, size.height * 0.3),
+        AppColors.success.withValues(alpha: 0.2),
+      ),
+      (
+        Offset(size.width * 0.5, size.height * 0.6),
+        AppColors.warning.withValues(alpha: 0.2),
+      ),
+      (
+        Offset(size.width * 0.2, size.height * 0.7),
+        const Color(0xFFE84393).withValues(alpha: 0.2),
+      ),
+      (
+        Offset(size.width * 0.8, size.height * 0.7),
+        AppColors.success.withValues(alpha: 0.2),
+      ),
     ];
 
     for (final area in riskAreas) {

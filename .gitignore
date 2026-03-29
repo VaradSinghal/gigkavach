@@ -1,0 +1,113 @@
+# ==========================================
+# GigKavach - Unified Repository .gitignore
+# ==========================================
+
+# ------------------------------------------
+# Environment Variables (CRITICAL)
+# ------------------------------------------
+.env
+.env.*
+!.env.example
+*.env
+
+# ------------------------------------------
+# Python Backend
+# ------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+/backend/build/
+/backend/develop-eggs/
+/backend/dist/
+/backend/downloads/
+/backend/eggs/
+/backend/.eggs/
+/backend/lib/
+/backend/lib64/
+/backend/parts/
+/backend/sdist/
+/backend/var/
+/backend/wheels/
+/backend/share/python-wheels/
+/backend/*.egg-info/
+/backend/.installed.cfg
+/backend/*.egg
+/backend/MANIFEST
+
+# Environments
+/backend/.env
+/backend/.venv
+/backend/env/
+/backend/venv/
+/backend/ENV/
+/backend/env.bak/
+/backend/venv.bak/
+
+# ------------------------------------------
+# React Admin Dashboard
+# ------------------------------------------
+# Dependencies
+/admin/node_modules/
+/admin/.pnp
+/admin/.pnp.js
+
+# Production
+/admin/dist/
+/admin/build/
+
+# Misc
+/admin/.DS_Store
+/admin/.env.local
+/admin/.env.development.local
+/admin/.env.test.local
+/admin/.env.production.local
+/admin/npm-debug.log*
+/admin/yarn-debug.log*
+/admin/yarn-error.log*
+
+# ------------------------------------------
+# Flutter Mobile App (GigShield)
+# ------------------------------------------
+# Flutter/Dart/Pub
+/gigshield/.dart_tool/
+/gigshield/.flutter-plugins
+/gigshield/.flutter-plugins-dependencies
+/gigshield/.pub-cache/
+/gigshield/.pub/
+/gigshield/build/
+/gigshield/flutter_*.png
+
+# Android
+/gigshield/android/app/src/main/assets/
+/gigshield/android/app/build/
+/gigshield/android/app/src/main/res/mipmap-*/
+/gigshield/android/.gradle/
+/gigshield/android/local.properties
+/gigshield/android/**/*.iml
+/gigshield/android/app/release/
+
+# iOS
+/gigshield/ios/Flutter/Flutter.framework
+/gigshield/ios/Flutter/Flutter.podspec
+/gigshield/ios/Flutter/Generated.xcconfig
+/gigshield/ios/Flutter/app.flx
+/gigshield/ios/Flutter/app.zip
+/gigshield/ios/Flutter/flutter_assets/
+/gigshield/ios/Pods/
+/gigshield/ios/.symlinks/
+/gigshield/ios/ServiceDefinitions.json
+/gigshield/ios/Runner/GeneratedPluginRegistrant.*
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store

@@ -1,0 +1,49 @@
+﻿python : Traceback 
+(most recent call 
+last):
+At line:1 char:145
++ ... Recurse -Force 
+ai/saved_models }; 
+python ai/train_all.py 
+2>&1 | Out-F ...
++                      
+                 ~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Traceback (mo   
+ st recent call las    
+t)::String) [], Re    
+moteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+  File "E:\Projects\gui
+dewire\backend\ai\train
+_all.py", line 96, in 
+<module>
+    train_all()
+  File "E:\Projects\gui
+dewire\backend\ai\train
+_all.py", line 21, in 
+train_all
+    print("\n" + 
+"\u2588" * 60)
+  File "C:\Users\Varad 
+Singhal\AppData\Local\P
+rograms\Python\Python31
+2\Lib\encodings\cp1252.
+py", line 19, in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode characters in 
+position 2-61: 
+character maps to 
+<undefined>

@@ -7,9 +7,16 @@ import 'screens/insurance_screen.dart';
 import 'screens/risk_map_screen.dart';
 import 'screens/wallet_screen.dart';
 import 'screens/profile_screen.dart';
+import 'screens/registration_screen.dart';
+import 'data/mock_data.dart';
+import 'services/supabase_service.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Supabase backend connection
+  await SupabaseService.initialize();
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -19,8 +26,15 @@ void main() {
   runApp(const GigKavachApp());
 }
 
-class GigKavachApp extends StatelessWidget {
+class GigKavachApp extends StatefulWidget {
   const GigKavachApp({super.key});
+
+  @override
+  State<GigKavachApp> createState() => _GigKavachAppState();
+}
+
+class _GigKavachAppState extends State<GigKavachApp> {
+  bool _isRegistered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +42,16 @@ class GigKavachApp extends StatelessWidget {
       title: 'GigKavach',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
-      home: const MainNavigationShell(),
+      home: _isRegistered
+          ? const MainNavigationShell()
+          : RegistrationScreen(
+              onRegistrationComplete: () {
+                setState(() {
+                  _isRegistered = true;
+                  MockData.isRegistered = true;
+                });
+              },
+            ),
     );
   }
 }
@@ -54,10 +77,7 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: _screens,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: _screens),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           color: AppColors.bgCard,
@@ -77,7 +97,11 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
                 _buildNavItem(0, Icons.dashboard_rounded, 'Home'),
                 _buildNavItem(1, Icons.rocket_launch_rounded, 'Boost'),
                 _buildNavItem(2, Icons.shield_rounded, 'Insurance'),
-                _buildNavItem(3, Icons.account_balance_wallet_rounded, 'Wallet'),
+                _buildNavItem(
+                  3,
+                  Icons.account_balance_wallet_rounded,
+                  'Wallet',
+                ),
                 _buildNavItem(4, Icons.person_rounded, 'Profile'),
               ],
             ),
@@ -96,7 +120,9 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
         duration: const Duration(milliseconds: 200),
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primary.withValues(alpha: 0.15) : Colors.transparent,
+          color: isSelected
+              ? AppColors.primary.withValues(alpha: 0.15)
+              : Colors.transparent,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Column(

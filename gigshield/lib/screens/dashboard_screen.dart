@@ -85,7 +85,9 @@ class DashboardScreen extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.bgCard,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.textMuted.withValues(alpha: 0.3)),
+            border: Border.all(
+              color: AppColors.textMuted.withValues(alpha: 0.3),
+            ),
           ),
           child: const Icon(
             Icons.notifications_outlined,
@@ -200,7 +202,8 @@ class DashboardScreen extends StatelessWidget {
             value: '\u20B9${MockData.weekEarnings.toInt()}',
             icon: Icons.trending_up_rounded,
             iconColor: AppColors.success,
-            subtitle: '${((MockData.weekEarnings / MockData.avgWeeklyIncome) * 100).toInt()}% of avg',
+            subtitle:
+                '${((MockData.weekEarnings / MockData.avgWeeklyIncome) * 100).toInt()}% of avg',
           ),
         ),
       ],
@@ -237,9 +240,15 @@ class DashboardScreen extends StatelessWidget {
                   reservedSize: 28,
                 ),
               ),
-              leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-              topTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
-              rightTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
+              leftTitles: const AxisTitles(
+                sideTitles: SideTitles(showTitles: false),
+              ),
+              topTitles: const AxisTitles(
+                sideTitles: SideTitles(showTitles: false),
+              ),
+              rightTitles: const AxisTitles(
+                sideTitles: SideTitles(showTitles: false),
+              ),
             ),
             gridData: const FlGridData(show: false),
             borderData: FlBorderData(show: false),
@@ -250,9 +259,13 @@ class DashboardScreen extends StatelessWidget {
                 barRods: [
                   BarChartRodData(
                     toY: MockData.weeklyDailyEarnings[i],
-                    color: isToday ? AppColors.primary : AppColors.textMuted.withValues(alpha: 0.5),
+                    color: isToday
+                        ? AppColors.primary
+                        : AppColors.textMuted.withValues(alpha: 0.5),
                     width: 20,
-                    borderRadius: const BorderRadius.vertical(top: Radius.circular(6)),
+                    borderRadius: const BorderRadius.vertical(
+                      top: Radius.circular(6),
+                    ),
                   ),
                 ],
               );
@@ -329,7 +342,11 @@ class DashboardScreen extends StatelessWidget {
       children: [
         _actionButton(Icons.shield_rounded, 'Insurance', AppColors.primary),
         const SizedBox(width: 10),
-        _actionButton(Icons.account_balance_wallet_rounded, 'Wallet', AppColors.accent),
+        _actionButton(
+          Icons.account_balance_wallet_rounded,
+          'Wallet',
+          AppColors.accent,
+        ),
         const SizedBox(width: 10),
         _actionButton(Icons.map_rounded, 'Risk Map', AppColors.warning),
         const SizedBox(width: 10),

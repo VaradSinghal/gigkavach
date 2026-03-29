@@ -1,81 +1,387 @@
-// Mock data for the UI prototype — no backend needed
+// Comprehensive mock data for GigKavach Phase 2
+// Simulates backend responses for all features
 
 class MockData {
-  // Worker profile
-  static const String workerName = 'Ravi Kumar';
-  static const String workerId = 'GS-28471';
-  static const String workerCity = 'Chennai';
-  static const String workerZone = 'Adyar';
+  // ─── Worker Profile ─────────────────────────────────────────────
+  static String workerName = 'Ravi Kumar';
+  static String workerId = 'GK-28471';
+  static String workerCity = 'Chennai';
+  static String workerZone = 'Adyar';
+  static String workerPhone = '+91 98765 43210';
+  static String workerPlatform = 'Swiggy';
+  static String workerVehicle = 'Bike';
+  static int experienceWeeks = 24;
+  static bool isRegistered = true;
 
-  // Earnings
+  // ─── Earnings ───────────────────────────────────────────────────
   static const double todayEarnings = 847.0;
   static const double weekEarnings = 3420.0;
   static const double monthEarnings = 14850.0;
   static const double avgWeeklyIncome = 4200.0;
   static const double avgHourlyIncome = 70.0;
 
-  // Platform split
   static const Map<String, double> platformEarnings = {
     'Swiggy': 2150.0,
     'Zomato': 890.0,
     'Zepto': 380.0,
   };
 
-  // Weekly earnings history (last 7 days)
   static const List<double> weeklyDailyEarnings = [
-    620, 780, 430, 910, 540, 847, 0
+    620,
+    780,
+    430,
+    910,
+    540,
+    847,
+    0,
   ];
-
   static const List<String> weekDays = [
-    'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+    'Mon',
+    'Tue',
+    'Wed',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun',
   ];
 
-  // Insurance
+  // ─── Insurance Policy ───────────────────────────────────────────
   static const double weeklyPremium = 45.0;
   static const double coverageCeiling = 2940.0;
   static const bool isCovered = true;
   static const int policyDaysRemaining = 4;
+  static const String policyId = 'POL-GK-2026-0847';
+  static const String policyStatus = 'Active';
+  static const String policyStartDate = '15 Mar 2026';
+  static const String policyEndDate = '22 Mar 2026';
+  static const String policyTier = 'Standard';
+  static const double coveragePercentage = 70.0;
+  static const int totalClaimsPaid = 3;
+  static const double totalPayoutsReceived = 1330.0;
+
+  // Premium Breakdown (Phase 2 — Dynamic)
   static const double basePremium = 25.0;
   static const double zoneRiskAdjustment = 12.0;
   static const double weatherAdjustment = 8.0;
+  static const double claimsHistoryFactor = 3.0;
+  static const double loyaltyDiscount = 3.0;
 
-  // Claims history
+  // Premium factors with explanations
+  static const List<Map<String, dynamic>> premiumFactors = [
+    {
+      'label': 'Base Rate (Standard)',
+      'amount': 25.0,
+      'type': 'base',
+      'info': 'Standard plan base rate',
+    },
+    {
+      'label': 'Zone Risk (Adyar)',
+      'amount': 12.0,
+      'type': 'add',
+      'info': 'Moderate flood risk zone - ML Risk Score: 65/100',
+    },
+    {
+      'label': 'Weather Forecast',
+      'amount': 8.0,
+      'type': 'add',
+      'info': 'Light rain predicted this week',
+    },
+    {
+      'label': 'Claims History',
+      'amount': 3.0,
+      'type': 'add',
+      'info': '3 claims in 24 weeks = low frequency',
+    },
+    {
+      'label': 'Loyalty Discount',
+      'amount': -3.0,
+      'type': 'discount',
+      'info': '24 weeks continuous subscriber',
+    },
+  ];
+
+  // ─── Policy History ─────────────────────────────────────────────
+  static const List<Map<String, dynamic>> policyHistory = [
+    {
+      'id': 'POL-GK-2026-0847',
+      'period': 'Mar 15 - Mar 22',
+      'tier': 'Standard',
+      'premium': 45.0,
+      'status': 'Active',
+      'claims': 0,
+    },
+    {
+      'id': 'POL-GK-2026-0732',
+      'period': 'Mar 8 - Mar 15',
+      'tier': 'Standard',
+      'premium': 42.0,
+      'status': 'Completed',
+      'claims': 1,
+    },
+    {
+      'id': 'POL-GK-2026-0618',
+      'period': 'Mar 1 - Mar 8',
+      'tier': 'Standard',
+      'premium': 48.0,
+      'status': 'Completed',
+      'claims': 1,
+    },
+    {
+      'id': 'POL-GK-2026-0504',
+      'period': 'Feb 22 - Mar 1',
+      'tier': 'Standard',
+      'premium': 40.0,
+      'status': 'Completed',
+      'claims': 1,
+    },
+    {
+      'id': 'POL-GK-2026-0390',
+      'period': 'Feb 15 - Feb 22',
+      'tier': 'Basic',
+      'premium': 28.0,
+      'status': 'Completed',
+      'claims': 0,
+    },
+  ];
+
+  // ─── Regulatory Info ────────────────────────────────────────────
+  static const List<String> exclusions = [
+    'Self-inflicted disruption or injury',
+    'Disruptions during non-working hours (11 PM - 5 AM)',
+    'Pre-existing platform bans or suspensions',
+    'Disruptions in zones outside subscribed coverage area',
+    'Claims filed more than 48 hours after the event',
+    'Intoxication during work hours',
+    'Fraudulent claims or GPS spoofing',
+  ];
+
+  static const String coolingOffPeriod = '7 days';
+  static const String grievanceEmail = 'support@gigkavach.in';
+  static const String grievancePhone = '1800-GIG-HELP';
+
+  // ─── Claims Management ──────────────────────────────────────────
   static const List<Map<String, dynamic>> claimsHistory = [
     {
+      'id': 'CLM-100847',
       'date': '12 Mar 2026',
       'type': 'Heavy Rainfall',
       'amount': 420.0,
       'status': 'Paid',
       'hours': 6.0,
+      'confidenceScore': 92,
+      'triggerData': 'Rainfall: 48mm in 6hrs at Adyar zone',
+      'timeline': [
+        {
+          'time': '2:15 PM',
+          'event': 'Trigger detected: Heavy rainfall > 40mm',
+          'status': 'detected',
+        },
+        {'time': '2:16 PM', 'event': 'Auto-claim created', 'status': 'created'},
+        {
+          'time': '2:17 PM',
+          'event': 'Fraud validation: Score 92/100',
+          'status': 'validated',
+        },
+        {
+          'time': '2:18 PM',
+          'event': 'Payout calculated: 6hrs \u00d7 \u20b970/hr \u00d7 70%',
+          'status': 'calculated',
+        },
+        {
+          'time': '2:22 PM',
+          'event': 'Payout processed via UPI',
+          'status': 'paid',
+        },
+      ],
     },
     {
+      'id': 'CLM-100632',
       'date': '28 Feb 2026',
       'type': 'Severe AQI',
       'amount': 350.0,
       'status': 'Paid',
       'hours': 5.0,
+      'confidenceScore': 88,
+      'triggerData': 'AQI: 385 for 4 consecutive hours at Adyar',
+      'timeline': [
+        {
+          'time': '10:30 AM',
+          'event': 'Trigger detected: AQI > 350 for 3+ hours',
+          'status': 'detected',
+        },
+        {
+          'time': '10:31 AM',
+          'event': 'Auto-claim created',
+          'status': 'created',
+        },
+        {
+          'time': '10:32 AM',
+          'event': 'Fraud validation: Score 88/100',
+          'status': 'validated',
+        },
+        {
+          'time': '10:33 AM',
+          'event': 'Payout calculated: 5hrs \u00d7 \u20b970/hr \u00d7 70%',
+          'status': 'calculated',
+        },
+        {
+          'time': '10:38 AM',
+          'event': 'Payout processed via UPI',
+          'status': 'paid',
+        },
+      ],
     },
     {
+      'id': 'CLM-100418',
       'date': '15 Feb 2026',
       'type': 'Flooding',
       'amount': 560.0,
       'status': 'Paid',
       'hours': 8.0,
+      'confidenceScore': 95,
+      'triggerData': 'Active flood alert + 62mm rainfall at Adyar',
+      'timeline': [
+        {
+          'time': '4:00 PM',
+          'event': 'Trigger detected: IMD flood warning for Adyar',
+          'status': 'detected',
+        },
+        {'time': '4:01 PM', 'event': 'Auto-claim created', 'status': 'created'},
+        {
+          'time': '4:02 PM',
+          'event': 'Fraud validation: Score 95/100',
+          'status': 'validated',
+        },
+        {
+          'time': '4:03 PM',
+          'event': 'Payout calculated: 8hrs \u00d7 \u20b970/hr \u00d7 70%',
+          'status': 'calculated',
+        },
+        {
+          'time': '4:06 PM',
+          'event': 'Payout processed via UPI',
+          'status': 'paid',
+        },
+      ],
     },
   ];
 
-  // Wallet
+  // ─── Active Triggers (Simulated Live Status) ────────────────────
+  static const List<Map<String, dynamic>> activeTriggers = [
+    {
+      'id': 'rain',
+      'icon': 'water_drop',
+      'label': 'Heavy Rainfall',
+      'threshold': '>40mm in 6hrs',
+      'currentValue': '12mm',
+      'status': 'monitoring',
+      'source': 'OpenWeather API',
+      'lastChecked': '2 min ago',
+      'riskLevel': 0.3,
+    },
+    {
+      'id': 'aqi',
+      'icon': 'air',
+      'label': 'Severe AQI',
+      'threshold': '>350 for 3hrs',
+      'currentValue': 'AQI 142',
+      'status': 'monitoring',
+      'source': 'AQICN API',
+      'lastChecked': '5 min ago',
+      'riskLevel': 0.15,
+    },
+    {
+      'id': 'flood',
+      'icon': 'waves',
+      'label': 'Flood Alert',
+      'threshold': 'Active IMD alert',
+      'currentValue': 'No alerts',
+      'status': 'safe',
+      'source': 'IMD Alert Feed',
+      'lastChecked': '15 min ago',
+      'riskLevel': 0.0,
+    },
+    {
+      'id': 'civic',
+      'icon': 'block',
+      'label': 'Civic Disruption',
+      'threshold': 'Zone closure/bandh',
+      'currentValue': 'All clear',
+      'status': 'safe',
+      'source': 'News API + Traffic',
+      'lastChecked': '30 min ago',
+      'riskLevel': 0.0,
+    },
+    {
+      'id': 'heat',
+      'icon': 'thermostat',
+      'label': 'Extreme Heat',
+      'threshold': '>43\u00b0C during work hours',
+      'currentValue': '34\u00b0C',
+      'status': 'monitoring',
+      'source': 'OpenWeather API',
+      'lastChecked': '2 min ago',
+      'riskLevel': 0.15,
+    },
+  ];
+
+  // ─── Wallet ─────────────────────────────────────────────────────
   static const double walletBalance = 385.0;
   static const double autoDeductionPerDay = 10.0;
 
-  // Stability Score
+  static const List<Map<String, dynamic>> walletTransactions = [
+    {
+      'date': 'Today',
+      'desc': 'Auto-save from earnings',
+      'amount': 10.0,
+      'type': 'credit',
+    },
+    {
+      'date': 'Yesterday',
+      'desc': 'Weekly premium paid (Standard)',
+      'amount': -45.0,
+      'type': 'debit',
+    },
+    {
+      'date': 'Yesterday',
+      'desc': 'Auto-save from earnings',
+      'amount': 10.0,
+      'type': 'credit',
+    },
+    {
+      'date': '17 Mar',
+      'desc': 'Claim payout: Heavy Rainfall',
+      'amount': 420.0,
+      'type': 'credit',
+    },
+    {
+      'date': '16 Mar',
+      'desc': 'Auto-save from earnings',
+      'amount': 10.0,
+      'type': 'credit',
+    },
+    {
+      'date': '15 Mar',
+      'desc': 'Auto-save from earnings',
+      'amount': 10.0,
+      'type': 'credit',
+    },
+    {
+      'date': '14 Mar',
+      'desc': 'Weekly premium paid (Standard)',
+      'amount': -42.0,
+      'type': 'debit',
+    },
+  ];
+
+  // ─── Stability Score ────────────────────────────────────────────
   static const int stabilityScore = 62;
   static const double earningsConsistency = 68.0;
   static const double riskExposure = 55.0;
   static const double insuranceUtil = 80.0;
   static const double savingsBehavior = 45.0;
 
-  // Work Decision
+  // ─── Work Decision ──────────────────────────────────────────────
   static const int decisionScore = 72;
   static const String decisionLabel = 'GO';
   static const double demandScore = 78.0;
@@ -83,7 +389,7 @@ class MockData {
   static const double coverageBonus = 80.0;
   static const double historicalStability = 60.0;
 
-  // Boost recommendations
+  // ─── Boost Recommendations ──────────────────────────────────────
   static const List<Map<String, dynamic>> boostZones = [
     {
       'zone': 'Velachery',
@@ -115,7 +421,7 @@ class MockData {
     },
   ];
 
-  // Risk zones for heatmap
+  // ─── Risk Zones ─────────────────────────────────────────────────
   static const List<Map<String, dynamic>> riskZones = [
     {'zone': 'Adyar', 'risk': 65, 'label': 'Moderate', 'rain': '12mm'},
     {'zone': 'Velachery', 'risk': 35, 'label': 'Low', 'rain': '2mm'},
@@ -127,18 +433,7 @@ class MockData {
     {'zone': 'Tambaram', 'risk': 90, 'label': 'Critical', 'rain': '42mm'},
   ];
 
-  // Wallet transactions
-  static const List<Map<String, dynamic>> walletTransactions = [
-    {'date': 'Today', 'desc': 'Auto-save from earnings', 'amount': 10.0, 'type': 'credit'},
-    {'date': 'Yesterday', 'desc': 'Weekly premium paid', 'amount': -45.0, 'type': 'debit'},
-    {'date': 'Yesterday', 'desc': 'Auto-save from earnings', 'amount': 10.0, 'type': 'credit'},
-    {'date': '17 Mar', 'desc': 'Auto-save from earnings', 'amount': 10.0, 'type': 'credit'},
-    {'date': '16 Mar', 'desc': 'Auto-save from earnings', 'amount': 10.0, 'type': 'credit'},
-    {'date': '15 Mar', 'desc': 'Claim payout received', 'amount': 420.0, 'type': 'credit'},
-    {'date': '14 Mar', 'desc': 'Auto-save from earnings', 'amount': 10.0, 'type': 'credit'},
-  ];
-
-  // Weekly forecast
+  // ─── Weekly Forecast ────────────────────────────────────────────
   static const List<Map<String, dynamic>> weekForecast = [
     {'day': 'Thu', 'risk': 30, 'rain': '2mm', 'demand': 'High'},
     {'day': 'Fri', 'risk': 45, 'rain': '8mm', 'demand': 'Medium'},
@@ -147,5 +442,44 @@ class MockData {
     {'day': 'Mon', 'risk': 20, 'rain': '0mm', 'demand': 'High'},
     {'day': 'Tue', 'risk': 15, 'rain': '0mm', 'demand': 'High'},
     {'day': 'Wed', 'risk': 35, 'rain': '5mm', 'demand': 'High'},
+  ];
+
+  // ─── Insurance Plans (for catalog) ──────────────────────────────
+  static const List<Map<String, dynamic>> insurancePlans = [
+    {
+      'name': 'Basic',
+      'price': 25,
+      'coverage': 50,
+      'triggers': 3,
+      'description': 'Essential protection for weather disruptions',
+      'features': ['Heavy Rainfall', 'Severe AQI', 'Extreme Heat'],
+    },
+    {
+      'name': 'Standard',
+      'price': 45,
+      'coverage': 70,
+      'triggers': 5,
+      'description': 'Complete income protection with all triggers',
+      'features': [
+        'All Basic triggers',
+        'Flooding',
+        'Civic Disruption',
+        'Priority payouts',
+      ],
+    },
+    {
+      'name': 'Premium',
+      'price': 65,
+      'coverage': 85,
+      'triggers': 5,
+      'description': 'Maximum protection with instant payouts',
+      'features': [
+        'All Standard triggers',
+        '85% coverage',
+        'Instant payouts',
+        'Predictive alerts',
+        'Dedicated support',
+      ],
+    },
   ];
 }

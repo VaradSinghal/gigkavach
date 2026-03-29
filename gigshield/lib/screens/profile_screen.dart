@@ -19,25 +19,69 @@ class ProfileScreen extends StatelessWidget {
               const SizedBox(height: 16),
               const Text(
                 'Profile',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700, color: AppColors.textPrimary),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textPrimary,
+                ),
               ),
               const SizedBox(height: 20),
               _buildProfileCard(),
               const SizedBox(height: 16),
               _buildStatsRow(),
               const SectionHeader(title: 'Account'),
-              _buildMenuItem(Icons.person_outline_rounded, 'Personal Information', AppColors.primary),
-              _buildMenuItem(Icons.location_on_outlined, 'Work Zones', AppColors.accent),
-              _buildMenuItem(Icons.payments_outlined, 'Payment Methods', AppColors.success),
-              _buildMenuItem(Icons.history_rounded, 'Earnings History', AppColors.warning),
+              _buildMenuItem(
+                Icons.person_outline_rounded,
+                'Personal Information',
+                AppColors.primary,
+              ),
+              _buildMenuItem(
+                Icons.location_on_outlined,
+                'Work Zones',
+                AppColors.accent,
+              ),
+              _buildMenuItem(
+                Icons.payments_outlined,
+                'Payment Methods',
+                AppColors.success,
+              ),
+              _buildMenuItem(
+                Icons.history_rounded,
+                'Earnings History',
+                AppColors.warning,
+              ),
               const SectionHeader(title: 'Insurance'),
-              _buildMenuItem(Icons.shield_outlined, 'My Policies', AppColors.primary),
-              _buildMenuItem(Icons.receipt_long_outlined, 'Claims History', AppColors.accent),
-              _buildMenuItem(Icons.auto_awesome_rounded, 'Trust Score', AppColors.success),
+              _buildMenuItem(
+                Icons.shield_outlined,
+                'My Policies',
+                AppColors.primary,
+              ),
+              _buildMenuItem(
+                Icons.receipt_long_outlined,
+                'Claims History',
+                AppColors.accent,
+              ),
+              _buildMenuItem(
+                Icons.auto_awesome_rounded,
+                'Trust Score',
+                AppColors.success,
+              ),
               const SectionHeader(title: 'App'),
-              _buildMenuItem(Icons.notifications_outlined, 'Notifications', AppColors.warning),
-              _buildMenuItem(Icons.help_outline_rounded, 'Help & Support', AppColors.textSecondary),
-              _buildMenuItem(Icons.info_outline_rounded, 'About GigKavach', AppColors.textSecondary),
+              _buildMenuItem(
+                Icons.notifications_outlined,
+                'Notifications',
+                AppColors.warning,
+              ),
+              _buildMenuItem(
+                Icons.help_outline_rounded,
+                'Help & Support',
+                AppColors.textSecondary,
+              ),
+              _buildMenuItem(
+                Icons.info_outline_rounded,
+                'About GigKavach',
+                AppColors.textSecondary,
+              ),
               const SizedBox(height: 20),
               _buildLogoutButton(),
               const SizedBox(height: 100),
@@ -62,7 +106,11 @@ class ProfileScreen extends StatelessWidget {
             child: const Center(
               child: Text(
                 'RK',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, color: Colors.white),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
@@ -72,16 +120,26 @@ class ProfileScreen extends StatelessWidget {
             children: [
               const Text(
                 MockData.workerName,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textPrimary),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.textPrimary,
+                ),
               ),
               const SizedBox(height: 2),
               Text(
                 'ID: ${MockData.workerId}',
-                style: const TextStyle(fontSize: 13, color: AppColors.textSecondary),
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: AppColors.textSecondary,
+                ),
               ),
               Text(
                 '${MockData.workerZone}, ${MockData.workerCity}',
-                style: const TextStyle(fontSize: 13, color: AppColors.textSecondary),
+                style: const TextStyle(
+                  fontSize: 13,
+                  color: AppColors.textSecondary,
+                ),
               ),
             ],
           ),
@@ -92,7 +150,11 @@ class ProfileScreen extends StatelessWidget {
               color: AppColors.bgSurface,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: const Icon(Icons.edit_rounded, size: 18, color: AppColors.textSecondary),
+            child: const Icon(
+              Icons.edit_rounded,
+              size: 18,
+              color: AppColors.textSecondary,
+            ),
           ),
         ],
       ),
@@ -103,12 +165,14 @@ class ProfileScreen extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: _statTile('Total Earned', '\u20B9${MockData.monthEarnings.toInt()}', 'This month'),
+          child: _statTile(
+            'Total Earned',
+            '\u20B9${MockData.monthEarnings.toInt()}',
+            'This month',
+          ),
         ),
         const SizedBox(width: 10),
-        Expanded(
-          child: _statTile('Claims Paid', '\u20B91,330', '3 claims'),
-        ),
+        Expanded(child: _statTile('Claims Paid', '\u20B91,330', '3 claims')),
         const SizedBox(width: 10),
         Expanded(
           child: _statTile('Stability', '${MockData.stabilityScore}', 'Score'),
@@ -122,10 +186,26 @@ class ProfileScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
       child: Column(
         children: [
-          Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
+          Text(
+            value,
+            style: const TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: AppColors.textPrimary,
+            ),
+          ),
           const SizedBox(height: 2),
-          Text(label, style: const TextStyle(fontSize: 11, color: AppColors.textSecondary)),
-          Text(sub, style: const TextStyle(fontSize: 10, color: AppColors.textMuted)),
+          Text(
+            label,
+            style: const TextStyle(
+              fontSize: 11,
+              color: AppColors.textSecondary,
+            ),
+          ),
+          Text(
+            sub,
+            style: const TextStyle(fontSize: 10, color: AppColors.textMuted),
+          ),
         ],
       ),
     );
@@ -148,9 +228,19 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Expanded(
-              child: Text(label, style: const TextStyle(fontSize: 14, color: AppColors.textPrimary)),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  fontSize: 14,
+                  color: AppColors.textPrimary,
+                ),
+              ),
             ),
-            const Icon(Icons.chevron_right_rounded, color: AppColors.textMuted, size: 20),
+            const Icon(
+              Icons.chevron_right_rounded,
+              color: AppColors.textMuted,
+              size: 20,
+            ),
           ],
         ),
       ),
@@ -163,7 +253,11 @@ class ProfileScreen extends StatelessWidget {
       child: const Center(
         child: Text(
           'Log Out',
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.danger),
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: AppColors.danger,
+          ),
         ),
       ),
     );

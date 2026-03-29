@@ -1,0 +1,501 @@
+worker_id,city,zone,primary_platform,secondary_platform,vehicle_type,avg_daily_hours,experience_weeks,avg_daily_income,avg_weekly_income,latitude,longitude,is_flood_zone,trust_score
+GK-10000,Mumbai,Bandra,Swiggy,,Scooter,9.0,35,533.22,3146.89,19.038999,72.827551,False,0.933
+GK-10001,Chennai,T. Nagar,Zepto,Swiggy,Bicycle,11.7,98,747.84,3977.39,12.856175,80.295486,False,0.916
+GK-10002,Mumbai,Bandra,Zepto,Zomato,Bike,7.5,7,614.29,3635.23,19.131189,72.876153,False,0.646
+GK-10003,Chennai,Mylapore,Swiggy,,Bicycle,7.1,7,561.39,3468.13,12.937643,80.204954,False,0.728
+GK-10004,Mumbai,Borivali,Zepto,,Bicycle,7.6,73,1083.92,5525.37,19.011613,72.898981,False,0.585
+GK-10005,Delhi,Saket,Zomato,,Scooter,13.6,107,759.13,3906.87,28.741408,77.261679,False,0.652
+GK-10006,Chennai,T. Nagar,Zepto,Zomato,Scooter,11.5,39,546.77,2946.09,12.998553,80.155158,False,0.955
+GK-10007,Chennai,Mylapore,Zomato,Swiggy,Bike,11.3,52,675.74,3566.07,12.943513,80.22801,False,0.773
+GK-10008,Chennai,Guindy,Zomato,,Scooter,13.8,107,732.8,3713.71,13.126562,80.163274,False,0.598
+GK-10009,Chennai,Tambaram,Zepto,Swiggy,Scooter,8.6,14,832.26,4606.67,12.966603,80.190702,True,0.914
+GK-10010,Mumbai,Kurla,Zepto,,Scooter,8.2,77,530.42,3266.52,19.200549,72.829692,True,0.993
+GK-10011,Chennai,Velachery,Swiggy,,Bike,7.6,102,720.16,4388.3,12.851657,80.272319,True,0.853
+GK-10012,Delhi,Dwarka,Swiggy,Zomato,Scooter,12.2,39,668.93,3676.67,28.528967,77.272621,True,0.812
+GK-10013,Delhi,Karol Bagh,Swiggy,Zepto,Scooter,6.5,30,606.48,3612.4,28.577746,77.165037,False,0.865
+GK-10014,Mumbai,Kurla,Zepto,,Bicycle,13.1,13,544.33,3351.14,19.178311,72.918902,True,0.781
+GK-10015,Mumbai,Dadar,Zepto,,Bike,10.0,24,688.63,3554.6,19.130683,72.87558,True,0.513
+GK-10016,Delhi,Chandni Chowk,Zomato,,Bicycle,6.3,75,487.19,2735.85,28.627143,77.281513,True,0.625
+GK-10017,Chennai,Guindy,Swiggy,Zomato,Bike,12.0,107,856.37,4488.95,12.918639,80.161547,False,0.645
+GK-10018,Delhi,Chandni Chowk,Zomato,Swiggy,Bike,13.4,120,775.22,4913.99,28.717865,77.260734,True,0.593
+GK-10019,Mumbai,Goregaon,Swiggy,,Scooter,10.3,54,873.73,4512.88,19.20186,72.936492,False,0.659
+GK-10020,Mumbai,Powai,Swiggy,Zepto,Bike,7.8,35,891.06,5013.21,19.215183,72.820904,False,0.755
+GK-10021,Mumbai,Thane,Zepto,Zomato,Bicycle,7.8,78,656.21,3599.18,19.029966,72.86389,False,0.971
+GK-10022,Delhi,Pitampura,Zomato,Zepto,Bike,10.2,21,558.54,3209.3,28.742946,77.292489,False,0.626
+GK-10023,Mumbai,Powai,Swiggy,Zomato,Bike,8.4,23,910.59,5239.55,19.07121,72.824795,False,0.805
+GK-10024,Mumbai,Dadar,Zepto,Zomato,Bicycle,6.4,12,771.66,4999.18,19.05989,72.838836,True,0.745
+GK-10025,Delhi,Chandni Chowk,Zepto,Zomato,Bicycle,7.9,36,661.15,4027.94,28.668034,77.252324,True,0.619
+GK-10026,Mumbai,Andheri,Zepto,,Bike,8.9,91,910.78,4992.14,19.133944,72.831738,True,0.918
+GK-10027,Mumbai,Kurla,Zepto,Zomato,Bike,7.5,41,908.85,4566.86,19.010194,72.896816,True,0.839
+GK-10028,Delhi,Rohini,Zomato,Swiggy,Bicycle,10.1,116,797.36,5107.17,28.543592,77.238188,True,0.693
+GK-10029,Mumbai,Kurla,Zepto,Swiggy,Bicycle,7.1,120,516.57,3262.66,19.085267,72.834752,True,0.962
+GK-10030,Chennai,Anna Nagar,Zepto,,Bicycle,8.1,29,856.58,4402.52,13.01656,80.229448,False,0.621
+GK-10031,Chennai,Guindy,Swiggy,,Bicycle,13.2,4,778.97,4302.89,13.120125,80.244965,False,0.67
+GK-10032,Mumbai,Goregaon,Zomato,Swiggy,Bike,11.8,50,792.65,4684.28,19.021035,72.841012,False,0.949
+GK-10033,Delhi,Saket,Swiggy,Zomato,Bicycle,6.1,14,882.56,4625.68,28.525368,77.2327,False,0.503
+GK-10034,Chennai,Tambaram,Swiggy,,Bike,10.4,20,857.4,4705.5,12.917281,80.256827,True,0.619
+GK-10035,Mumbai,Powai,Zepto,Swiggy,Scooter,12.0,71,898.77,5260.02,19.162408,72.930399,False,0.829
+GK-10036,Mumbai,Malad,Swiggy,,Bicycle,6.7,92,494.52,3134.3,19.060997,72.946491,True,0.697
+GK-10037,Chennai,Anna Nagar,Zomato,,Bicycle,11.0,51,584.23,3352.77,13.088443,80.225396,False,0.788
+GK-10038,Delhi,Janakpuri,Zomato,Swiggy,Bike,7.6,32,555.55,3561.46,28.506079,77.229094,False,0.589
+GK-10039,Chennai,Guindy,Swiggy,,Bicycle,13.6,33,846.58,5411.74,13.124459,80.205524,False,0.508
+GK-10040,Mumbai,Borivali,Swiggy,Zomato,Bicycle,9.4,84,632.13,3321.36,19.096274,72.930648,False,0.658
+GK-10041,Chennai,Mylapore,Swiggy,Zomato,Scooter,10.5,13,816.56,4201.83,13.130846,80.254404,False,0.785
+GK-10042,Mumbai,Borivali,Zomato,,Scooter,10.9,31,858.61,4756.04,19.185192,72.910612,False,0.851
+GK-10043,Mumbai,Dadar,Zepto,,Bicycle,8.3,64,707.7,4507.95,19.20234,72.925315,True,0.934
+GK-10044,Chennai,Tambaram,Zomato,Swiggy,Bike,10.1,16,915.6,5800.33,13.044989,80.255295,True,0.898
+GK-10045,Mumbai,Malad,Zomato,Zepto,Scooter,8.7,63,701.1,3543.3,19.093896,72.832218,True,0.789
+GK-10046,Mumbai,Andheri,Zepto,,Bicycle,9.7,16,431.73,2691.36,19.147708,72.823965,True,0.519
+GK-10047,Chennai,Porur,Zepto,Zomato,Bike,8.9,35,753.6,4011.96,12.888118,80.228336,True,0.885
+GK-10048,Chennai,Mylapore,Zepto,Zomato,Bike,11.0,58,1058.36,6111.45,13.041229,80.258914,False,0.988
+GK-10049,Chennai,Anna Nagar,Zomato,Swiggy,Bike,8.6,60,976.51,4997.47,13.088556,80.190625,False,0.719
+GK-10050,Mumbai,Bandra,Swiggy,,Bicycle,6.2,111,584.23,3402.46,19.043324,72.840337,False,0.625
+GK-10051,Chennai,Velachery,Swiggy,Zomato,Scooter,11.7,66,949.2,5796.62,13.048059,80.19199,True,0.977
+GK-10052,Delhi,Saket,Zomato,Swiggy,Bike,10.4,52,500.98,2515.72,28.561933,77.171195,False,0.879
+GK-10053,Chennai,Porur,Zomato,Zepto,Scooter,6.9,58,976.56,5913.55,12.863801,80.156109,True,0.928
+GK-10054,Mumbai,Thane,Zepto,,Scooter,9.8,23,697.08,3902.08,19.118368,72.842516,False,0.717
+GK-10055,Chennai,Anna Nagar,Swiggy,Zomato,Bicycle,10.9,98,560.11,3326.38,13.040528,80.156796,False,0.687
+GK-10056,Mumbai,Andheri,Zepto,Zomato,Bike,10.0,10,760.75,3834.0,19.040734,72.829174,True,0.821
+GK-10057,Mumbai,Powai,Zepto,,Bike,10.7,11,836.46,4989.43,19.235058,72.894812,False,0.694
+GK-10058,Mumbai,Bandra,Swiggy,Zomato,Bicycle,9.7,12,803.03,4250.99,19.096526,72.944955,False,0.953
+GK-10059,Mumbai,Borivali,Zomato,Swiggy,Bicycle,6.6,35,710.65,4281.32,19.025195,72.822369,False,0.547
+GK-10060,Mumbai,Navi Mumbai,Swiggy,,Bike,6.6,57,832.75,4311.35,19.005818,72.925881,False,0.641
+GK-10061,Mumbai,Navi Mumbai,Zepto,,Scooter,11.6,37,630.32,3911.28,19.157236,72.934071,False,0.868
+GK-10062,Chennai,Guindy,Swiggy,Zepto,Scooter,8.3,20,782.76,4350.6,13.09205,80.298576,False,0.706
+GK-10063,Mumbai,Kurla,Zomato,Zepto,Bike,12.2,5,593.48,3349.3,19.085201,72.940998,True,0.929
+GK-10064,Delhi,Pitampura,Zepto,Swiggy,Bike,12.0,72,638.81,3500.73,28.725638,77.20105,False,0.913
+GK-10065,Chennai,Sholinganallur,Zomato,Swiggy,Scooter,13.2,116,739.24,3797.42,12.966761,80.151626,False,0.953
+GK-10066,Chennai,Mylapore,Zomato,Zepto,Bike,8.6,60,986.85,5929.76,12.984534,80.193982,False,0.664
+GK-10067,Mumbai,Kurla,Zepto,,Bicycle,12.0,5,859.78,4936.54,19.197895,72.92265,True,0.546
+GK-10068,Mumbai,Thane,Zomato,,Bike,6.5,116,386.5,2015.4,19.221926,72.865619,False,0.559
+GK-10069,Chennai,Anna Nagar,Swiggy,Zomato,Bicycle,12.1,74,965.56,5843.04,13.035465,80.165168,False,0.542
+GK-10070,Chennai,Anna Nagar,Zomato,,Bike,6.6,95,783.87,4359.42,12.874405,80.162726,False,0.993
+GK-10071,Delhi,Saket,Zepto,,Scooter,9.0,68,830.88,5093.35,28.7032,77.28945,False,0.993
+GK-10072,Delhi,Lajpat Nagar,Swiggy,Zomato,Bicycle,9.0,58,394.44,1978.92,28.726589,77.122239,False,0.746
+GK-10073,Delhi,Connaught Place,Swiggy,Zepto,Bike,9.7,85,935.5,5588.5,28.514076,77.123764,False,0.559
+GK-10074,Delhi,Rohini,Zepto,Zomato,Bicycle,12.0,94,773.9,4129.06,28.593718,77.157142,True,0.934
+GK-10075,Delhi,Janakpuri,Swiggy,Zomato,Bike,13.7,117,713.33,4520.17,28.503039,77.293976,False,0.522
+GK-10076,Mumbai,Dadar,Zepto,Swiggy,Scooter,10.2,78,771.04,4380.9,19.130774,72.901822,True,0.848
+GK-10077,Mumbai,Dadar,Zomato,Swiggy,Bike,11.0,43,708.15,3839.2,19.146079,72.937151,True,0.523
+GK-10078,Delhi,Connaught Place,Zomato,Swiggy,Bicycle,13.6,35,683.36,3892.11,28.655033,77.155476,False,0.594
+GK-10079,Mumbai,Bandra,Zomato,,Scooter,8.8,83,846.45,5484.42,19.145914,72.830106,False,0.987
+GK-10080,Mumbai,Dadar,Swiggy,Zomato,Bike,11.6,116,413.09,2629.89,19.203449,72.909015,True,0.581
+GK-10081,Delhi,Connaught Place,Swiggy,,Scooter,12.6,104,754.37,4245.11,28.73745,77.245144,False,0.807
+GK-10082,Delhi,Saket,Zomato,Swiggy,Bicycle,13.5,17,688.96,4058.8,28.702638,77.297455,False,0.575
+GK-10083,Delhi,Connaught Place,Zomato,Swiggy,Bike,9.0,108,657.67,3750.72,28.742479,77.268424,False,0.919
+GK-10084,Delhi,Karol Bagh,Zomato,Swiggy,Bike,9.3,7,683.71,4440.67,28.716181,77.26258,False,1.0
+GK-10085,Mumbai,Borivali,Zomato,Zepto,Scooter,10.4,114,691.68,3715.03,19.192247,72.94282,False,0.925
+GK-10086,Chennai,Anna Nagar,Zomato,,Bicycle,9.6,55,494.71,2557.82,13.05151,80.242719,False,0.679
+GK-10087,Mumbai,Thane,Zomato,Swiggy,Bike,11.4,116,780.32,4899.06,19.130077,72.920401,False,0.76
+GK-10088,Delhi,Rohini,Zepto,Zomato,Bike,10.4,17,853.99,5237.27,28.600871,77.126803,True,0.514
+GK-10089,Mumbai,Malad,Zomato,,Scooter,11.0,59,724.91,3640.37,19.17602,72.847685,True,0.568
+GK-10090,Mumbai,Thane,Swiggy,Zepto,Bicycle,8.8,28,440.37,2541.37,19.109369,72.937541,False,0.674
+GK-10091,Delhi,Connaught Place,Zepto,Zomato,Bike,12.3,70,916.65,5888.82,28.599136,77.224417,False,0.931
+GK-10092,Mumbai,Borivali,Zomato,Zepto,Bike,7.2,89,697.79,4004.57,19.064561,72.879688,False,0.99
+GK-10093,Delhi,Pitampura,Zomato,,Bike,8.6,96,819.46,4255.72,28.65835,77.148029,False,0.538
+GK-10094,Delhi,Janakpuri,Zomato,,Scooter,7.0,45,534.81,3209.57,28.586417,77.279358,False,0.737
+GK-10095,Delhi,Lajpat Nagar,Zepto,Swiggy,Bike,7.4,57,773.15,4188.84,28.548072,77.108174,False,0.584
+GK-10096,Mumbai,Malad,Zepto,,Bike,7.4,82,484.89,2453.04,19.091067,72.885444,True,0.845
+GK-10097,Mumbai,Kurla,Zomato,,Bike,12.4,42,671.27,4283.58,19.156975,72.830629,True,0.937
+GK-10098,Delhi,Saket,Zomato,,Bicycle,6.5,87,827.7,4598.46,28.687065,77.136904,False,0.605
+GK-10099,Delhi,Nehru Place,Zomato,Zepto,Bicycle,9.9,31,606.95,3715.27,28.654564,77.173783,False,0.731
+GK-10100,Mumbai,Powai,Zepto,Swiggy,Bicycle,6.3,14,827.71,4271.61,19.223802,72.886518,False,0.766
+GK-10101,Delhi,Janakpuri,Zepto,,Bicycle,9.6,46,551.81,3071.33,28.633154,77.148494,False,0.635
+GK-10102,Chennai,Mylapore,Zepto,Zomato,Bike,6.2,107,540.81,3185.58,12.948249,80.167964,False,0.945
+GK-10103,Chennai,T. Nagar,Swiggy,Zomato,Bike,11.4,64,601.84,3494.08,13.086751,80.224766,False,0.543
+GK-10104,Mumbai,Bandra,Zomato,Zepto,Bicycle,10.7,77,633.92,3783.79,19.031895,72.856891,False,0.682
+GK-10105,Chennai,Porur,Zomato,Zepto,Bike,10.6,22,937.31,5020.08,12.956829,80.297977,True,0.803
+GK-10106,Mumbai,Andheri,Swiggy,Zepto,Bike,6.8,26,631.28,3320.57,19.04017,72.844254,True,0.643
+GK-10107,Mumbai,Thane,Zomato,Swiggy,Bicycle,13.2,35,606.1,3923.63,19.020058,72.888186,False,0.705
+GK-10108,Chennai,Tambaram,Swiggy,Zepto,Bicycle,6.9,71,758.54,3987.14,13.109652,80.272561,True,0.629
+GK-10109,Mumbai,Navi Mumbai,Zomato,Zepto,Bicycle,11.3,108,687.26,3724.93,19.232344,72.892379,False,0.786
+GK-10110,Mumbai,Thane,Zomato,,Scooter,12.2,118,615.32,3182.59,19.106359,72.885989,False,0.621
+GK-10111,Chennai,Tambaram,Zomato,Zepto,Bike,10.9,111,549.69,3145.17,12.936589,80.237186,True,0.577
+GK-10112,Mumbai,Kurla,Zepto,Zomato,Bicycle,10.3,34,677.72,3716.3,19.033604,72.828239,True,0.995
+GK-10113,Delhi,Nehru Place,Swiggy,,Scooter,12.5,34,638.88,3765.21,28.56366,77.236301,False,0.88
+GK-10114,Delhi,Karol Bagh,Zomato,,Bike,9.8,21,434.46,2253.3,28.732382,77.266124,False,0.983
+GK-10115,Chennai,Mylapore,Zomato,,Bike,11.8,94,545.11,3331.54,13.131502,80.177185,False,0.533
+GK-10116,Chennai,Velachery,Zomato,Zepto,Scooter,10.6,73,682.02,3578.15,13.08858,80.180244,True,0.582
+GK-10117,Delhi,Chandni Chowk,Swiggy,Zomato,Scooter,12.5,53,717.06,4528.81,28.666299,77.204613,True,0.679
+GK-10118,Mumbai,Andheri,Zepto,Zomato,Scooter,9.1,4,662.48,4055.31,19.094236,72.880148,True,0.651
+GK-10119,Delhi,Lajpat Nagar,Zomato,Zepto,Bicycle,10.0,99,895.16,5205.65,28.558053,77.279915,False,0.692
+GK-10120,Mumbai,Thane,Zepto,Swiggy,Scooter,13.3,32,567.28,2954.91,19.234958,72.901602,False,0.667
+GK-10121,Delhi,Chandni Chowk,Zomato,Swiggy,Scooter,12.4,47,743.04,4594.14,28.655018,77.206692,True,0.947
+GK-10122,Mumbai,Malad,Zepto,Swiggy,Scooter,7.2,20,536.29,3294.8,19.185987,72.824359,True,0.785
+GK-10123,Mumbai,Thane,Swiggy,Zepto,Bicycle,13.0,76,577.45,3620.43,19.08552,72.926763,False,0.555
+GK-10124,Mumbai,Andheri,Swiggy,,Scooter,7.0,21,893.05,5429.79,19.037479,72.849803,True,0.861
+GK-10125,Delhi,Rohini,Swiggy,Zepto,Scooter,11.1,45,633.3,3494.89,28.673487,77.208545,True,0.626
+GK-10126,Chennai,Tambaram,Zomato,Zepto,Scooter,7.5,39,725.59,3794.86,12.970255,80.219301,True,0.974
+GK-10127,Delhi,Lajpat Nagar,Swiggy,Zepto,Bike,10.7,99,825.33,5206.34,28.626472,77.222291,False,0.509
+GK-10128,Mumbai,Andheri,Zomato,Swiggy,Bicycle,13.5,12,967.32,5672.78,19.230625,72.911941,True,0.576
+GK-10129,Mumbai,Andheri,Swiggy,Zomato,Bike,10.9,111,788.54,5037.47,19.106033,72.915738,True,0.967
+GK-10130,Chennai,Chromepet,Swiggy,Zomato,Bike,9.6,64,1080.8,6705.59,12.969701,80.158214,False,0.668
+GK-10131,Mumbai,Bandra,Zepto,Swiggy,Scooter,6.0,93,778.59,4967.24,19.083375,72.871762,False,0.769
+GK-10132,Delhi,Karol Bagh,Swiggy,,Bicycle,8.8,99,890.52,4640.75,28.613054,77.144921,False,0.726
+GK-10133,Mumbai,Bandra,Swiggy,Zepto,Bike,7.4,78,577.23,3199.93,19.124592,72.87446,False,0.957
+GK-10134,Chennai,Anna Nagar,Zepto,,Scooter,10.6,54,547.42,2807.18,13.138321,80.172299,False,0.707
+GK-10135,Mumbai,Borivali,Swiggy,,Bicycle,14.0,110,777.5,4762.14,19.125549,72.8974,False,0.534
+GK-10136,Mumbai,Borivali,Swiggy,,Scooter,7.7,112,682.77,3992.33,19.047672,72.824751,False,0.736
+GK-10137,Mumbai,Navi Mumbai,Swiggy,,Bike,6.5,48,723.26,4094.48,19.193882,72.878928,False,0.762
+GK-10138,Mumbai,Malad,Zepto,Zomato,Bike,9.2,68,523.37,2909.92,19.045482,72.932032,True,0.973
+GK-10139,Mumbai,Goregaon,Swiggy,Zepto,Scooter,8.2,17,730.56,3823.92,19.161,72.873135,False,0.513
+GK-10140,Delhi,Karol Bagh,Zepto,Zomato,Bicycle,11.7,23,686.62,3453.4,28.555493,77.146215,False,0.836
+GK-10141,Delhi,Rohini,Zepto,,Bicycle,6.8,38,704.5,3774.2,28.699979,77.135709,True,0.826
+GK-10142,Mumbai,Thane,Zomato,Zepto,Scooter,6.8,109,822.08,4934.23,19.213924,72.927929,False,0.699
+GK-10143,Mumbai,Navi Mumbai,Zomato,Zepto,Bike,7.6,110,558.94,2866.39,19.073287,72.936524,False,0.507
+GK-10144,Chennai,Anna Nagar,Zomato,Swiggy,Scooter,7.7,76,449.53,2422.58,13.117802,80.272617,False,0.671
+GK-10145,Mumbai,Malad,Zomato,Swiggy,Scooter,9.0,112,964.7,5415.94,19.147574,72.854848,True,0.812
+GK-10146,Delhi,Rohini,Zomato,Swiggy,Scooter,10.4,106,436.98,2754.15,28.737113,77.252721,True,0.57
+GK-10147,Delhi,Karol Bagh,Zomato,,Bicycle,9.9,116,618.26,3112.14,28.723638,77.259971,False,0.713
+GK-10148,Delhi,Janakpuri,Swiggy,,Bike,8.1,14,1023.29,6627.44,28.564472,77.127871,False,0.917
+GK-10149,Chennai,Porur,Zomato,,Bike,10.2,92,800.84,5102.51,12.901504,80.190846,True,0.509
+GK-10150,Delhi,Nehru Place,Zomato,Swiggy,Bike,6.9,41,455.56,2418.86,28.638545,77.230284,False,0.915
+GK-10151,Chennai,Porur,Zepto,Swiggy,Scooter,6.1,88,782.78,4615.36,12.891066,80.285003,True,0.937
+GK-10152,Mumbai,Goregaon,Zomato,,Bicycle,10.8,48,549.44,3174.87,19.228603,72.87444,False,0.692
+GK-10153,Delhi,Janakpuri,Zomato,Zepto,Bicycle,6.4,62,776.54,4585.26,28.541571,77.247607,False,0.541
+GK-10154,Delhi,Lajpat Nagar,Zomato,Swiggy,Bike,8.0,96,471.4,2757.5,28.588918,77.243809,False,0.649
+GK-10155,Chennai,Guindy,Swiggy,,Bicycle,9.8,101,580.23,3088.22,13.049101,80.290524,False,0.866
+GK-10156,Mumbai,Dadar,Swiggy,Zomato,Bicycle,6.2,65,791.14,4352.35,19.012856,72.884528,True,0.798
+GK-10157,Delhi,Pitampura,Zepto,,Scooter,12.2,16,472.12,2711.5,28.52665,77.115028,False,0.864
+GK-10158,Chennai,Anna Nagar,Swiggy,Zepto,Bike,11.5,42,466.31,2521.91,13.095731,80.269912,False,0.847
+GK-10159,Chennai,Sholinganallur,Swiggy,Zepto,Bike,10.7,10,639.94,3331.03,12.958292,80.163737,False,0.959
+GK-10160,Mumbai,Kurla,Zepto,Swiggy,Bicycle,13.6,115,502.1,3117.96,19.135475,72.933483,True,0.866
+GK-10161,Delhi,Dwarka,Swiggy,,Scooter,11.3,64,666.06,3819.28,28.673069,77.269839,True,0.625
+GK-10162,Delhi,Nehru Place,Zomato,Swiggy,Bike,7.8,36,822.77,5254.7,28.508486,77.239484,False,0.649
+GK-10163,Delhi,Dwarka,Swiggy,Zepto,Scooter,13.8,13,720.08,4512.61,28.736067,77.194843,True,0.931
+GK-10164,Mumbai,Andheri,Swiggy,Zomato,Bicycle,8.6,42,489.23,2695.57,19.030142,72.830004,True,0.848
+GK-10165,Chennai,Mylapore,Swiggy,,Scooter,11.8,81,775.16,4795.21,12.869607,80.197294,False,0.77
+GK-10166,Mumbai,Navi Mumbai,Swiggy,,Scooter,8.6,61,830.16,5234.28,19.153966,72.850285,False,0.512
+GK-10167,Delhi,Lajpat Nagar,Zepto,Zomato,Scooter,6.2,76,742.45,4601.83,28.718675,77.205787,False,0.97
+GK-10168,Mumbai,Andheri,Zepto,,Bike,14.0,101,883.48,5575.21,19.100483,72.882384,True,0.814
+GK-10169,Chennai,Mylapore,Zomato,,Bike,13.9,24,597.49,3648.5,13.080482,80.212665,False,0.711
+GK-10170,Chennai,T. Nagar,Zepto,Swiggy,Bike,7.9,4,654.95,3316.1,12.936172,80.194446,False,0.617
+GK-10171,Delhi,Nehru Place,Zepto,,Scooter,6.1,41,579.28,3486.96,28.746931,77.185555,False,0.692
+GK-10172,Chennai,Mylapore,Zomato,,Scooter,7.7,93,675.14,3996.91,13.113735,80.29171,False,0.734
+GK-10173,Delhi,Dwarka,Zepto,Swiggy,Scooter,7.3,104,576.16,3442.25,28.747792,77.146334,True,0.971
+GK-10174,Mumbai,Navi Mumbai,Zepto,Swiggy,Scooter,10.9,18,464.51,2865.74,19.044132,72.848663,False,0.593
+GK-10175,Mumbai,Borivali,Zepto,Swiggy,Scooter,8.8,109,711.09,4545.02,19.014461,72.945983,False,0.942
+GK-10176,Chennai,Velachery,Swiggy,Zomato,Scooter,14.0,80,643.99,4008.03,13.077472,80.254403,True,0.577
+GK-10177,Mumbai,Navi Mumbai,Zomato,Zepto,Bike,7.8,63,523.96,3075.71,19.055954,72.889807,False,0.796
+GK-10178,Mumbai,Kurla,Zepto,Zomato,Scooter,6.7,68,645.62,4063.01,19.032379,72.935537,True,0.978
+GK-10179,Mumbai,Powai,Zomato,Swiggy,Bicycle,12.5,9,787.57,4420.38,19.16381,72.891611,False,0.543
+GK-10180,Delhi,Karol Bagh,Zepto,Zomato,Bike,9.0,15,832.62,5016.44,28.623969,77.116209,False,0.61
+GK-10181,Chennai,Chromepet,Zepto,Swiggy,Bicycle,6.6,109,557.4,3282.31,13.105362,80.224272,False,0.74
+GK-10182,Delhi,Pitampura,Swiggy,Zomato,Scooter,12.6,70,898.58,5567.73,28.641433,77.153406,False,0.939
+GK-10183,Mumbai,Powai,Zomato,Swiggy,Bicycle,11.3,59,530.23,3316.86,19.212645,72.932748,False,0.854
+GK-10184,Mumbai,Powai,Swiggy,Zepto,Scooter,11.6,56,851.28,5369.67,19.188179,72.840619,False,0.94
+GK-10185,Delhi,Karol Bagh,Zepto,Swiggy,Bike,6.2,46,929.75,5685.67,28.706454,77.125774,False,0.668
+GK-10186,Delhi,Nehru Place,Zomato,,Scooter,7.3,108,762.74,4519.53,28.626867,77.101277,False,0.644
+GK-10187,Mumbai,Andheri,Zomato,Swiggy,Scooter,13.8,36,760.06,4415.93,19.157953,72.853774,True,0.817
+GK-10188,Delhi,Dwarka,Zomato,,Bike,12.2,88,739.99,4402.15,28.635317,77.292598,True,0.671
+GK-10189,Mumbai,Powai,Zomato,Swiggy,Bike,13.5,70,639.79,3264.05,19.025627,72.94184,False,0.844
+GK-10190,Delhi,Pitampura,Zomato,,Scooter,8.4,101,645.56,3272.09,28.645543,77.169177,False,0.81
+GK-10191,Chennai,Mylapore,Zomato,,Bike,13.0,40,726.2,3772.7,13.142047,80.295332,False,0.875
+GK-10192,Delhi,Nehru Place,Swiggy,Zomato,Bicycle,12.1,81,680.34,3680.94,28.692602,77.236659,False,0.723
+GK-10193,Chennai,T. Nagar,Zomato,,Bike,14.0,74,394.71,2444.13,12.977854,80.217708,False,0.582
+GK-10194,Delhi,Dwarka,Swiggy,Zomato,Scooter,11.5,19,868.28,4904.48,28.568315,77.290173,True,0.576
+GK-10195,Mumbai,Dadar,Zomato,,Scooter,13.5,69,896.58,4851.68,19.104932,72.903008,True,0.699
+GK-10196,Mumbai,Kurla,Zomato,Zepto,Scooter,13.9,35,834.68,4989.3,19.057489,72.847704,True,0.516
+GK-10197,Delhi,Janakpuri,Swiggy,Zepto,Bike,8.9,80,669.01,3531.23,28.71609,77.194642,False,0.984
+GK-10198,Mumbai,Dadar,Swiggy,Zepto,Scooter,12.9,47,806.16,4189.51,19.211196,72.918933,True,0.813
+GK-10199,Mumbai,Kurla,Swiggy,Zepto,Bicycle,6.3,42,808.38,4625.78,19.230212,72.900165,True,0.898
+GK-10200,Mumbai,Navi Mumbai,Zepto,Zomato,Bike,6.9,61,756.25,3854.09,19.107576,72.846068,False,0.746
+GK-10201,Mumbai,Powai,Zomato,Zepto,Bicycle,10.7,101,586.39,3332.35,19.067248,72.923683,False,0.655
+GK-10202,Mumbai,Malad,Zomato,Zepto,Bike,6.1,93,674.04,4072.87,19.119985,72.898003,True,0.646
+GK-10203,Chennai,Chromepet,Zomato,Swiggy,Scooter,12.9,9,596.78,3077.83,13.083955,80.155943,False,0.74
+GK-10204,Delhi,Nehru Place,Zepto,Zomato,Scooter,7.9,88,1060.3,5820.72,28.675616,77.21193,False,0.505
+GK-10205,Mumbai,Dadar,Zomato,Swiggy,Bike,10.1,68,696.61,3565.16,19.021967,72.865582,True,0.517
+GK-10206,Mumbai,Goregaon,Swiggy,Zepto,Bike,9.2,71,729.31,3829.77,19.172366,72.924076,False,0.6
+GK-10207,Delhi,Connaught Place,Zepto,Swiggy,Scooter,6.8,115,540.61,3462.24,28.659108,77.241295,False,0.516
+GK-10208,Mumbai,Dadar,Swiggy,Zepto,Scooter,6.4,47,971.8,5353.82,19.217742,72.912831,True,0.901
+GK-10209,Mumbai,Malad,Zepto,Swiggy,Scooter,12.5,113,753.69,4692.43,19.020029,72.936326,True,0.774
+GK-10210,Mumbai,Thane,Zomato,Zepto,Bicycle,9.6,95,760.2,4082.77,19.182897,72.830612,False,0.53
+GK-10211,Delhi,Janakpuri,Swiggy,,Bike,7.3,34,1027.38,5656.08,28.717946,77.143843,False,0.988
+GK-10212,Mumbai,Kurla,Swiggy,,Bike,7.5,59,792.8,4235.68,19.124549,72.892197,True,0.86
+GK-10213,Chennai,Velachery,Zomato,Swiggy,Bicycle,14.0,42,869.4,5234.09,13.142438,80.247549,True,0.6
+GK-10214,Chennai,Adyar,Zomato,Swiggy,Scooter,6.6,49,863.66,4766.46,13.068151,80.261406,True,0.713
+GK-10215,Delhi,Chandni Chowk,Swiggy,Zomato,Bicycle,9.0,56,683.39,4010.14,28.746912,77.108022,True,0.934
+GK-10216,Mumbai,Dadar,Swiggy,Zomato,Bike,9.5,82,684.19,3705.05,19.218356,72.937091,True,0.711
+GK-10217,Delhi,Pitampura,Zepto,Swiggy,Scooter,10.7,120,967.12,5751.79,28.728091,77.142132,False,0.811
+GK-10218,Mumbai,Dadar,Swiggy,Zepto,Bicycle,11.9,36,760.24,4908.94,19.227258,72.843359,True,0.619
+GK-10219,Delhi,Lajpat Nagar,Zepto,Swiggy,Scooter,7.4,119,597.16,3765.77,28.713596,77.198456,False,0.624
+GK-10220,Delhi,Janakpuri,Swiggy,Zomato,Scooter,9.6,48,364.84,2354.72,28.648238,77.132705,False,0.696
+GK-10221,Mumbai,Kurla,Zepto,Zomato,Bicycle,8.1,36,735.28,3820.74,19.164184,72.862275,True,0.887
+GK-10222,Delhi,Lajpat Nagar,Swiggy,Zepto,Scooter,13.8,17,466.62,2568.98,28.518374,77.133952,False,0.76
+GK-10223,Chennai,Porur,Zepto,Zomato,Bicycle,12.6,41,659.14,3994.5,12.979266,80.187307,True,0.809
+GK-10224,Mumbai,Kurla,Swiggy,,Scooter,7.3,39,827.06,4861.48,19.118658,72.929742,True,0.903
+GK-10225,Chennai,Chromepet,Zepto,,Bike,12.9,120,883.38,4492.54,12.911752,80.166788,False,0.635
+GK-10226,Mumbai,Powai,Zomato,Swiggy,Bicycle,10.2,106,680.36,3444.23,19.233469,72.8611,False,0.754
+GK-10227,Delhi,Saket,Zepto,Swiggy,Bicycle,7.2,36,544.76,3501.56,28.746658,77.293024,False,0.502
+GK-10228,Mumbai,Dadar,Zepto,Swiggy,Bicycle,11.1,86,679.96,3542.24,19.128899,72.88355,True,0.833
+GK-10229,Chennai,Anna Nagar,Zomato,Swiggy,Bicycle,6.2,50,862.88,5186.04,12.942379,80.255702,False,0.601
+GK-10230,Mumbai,Dadar,Swiggy,Zepto,Scooter,13.8,99,741.49,4477.81,19.110938,72.932858,True,0.589
+GK-10231,Delhi,Rohini,Swiggy,Zomato,Bicycle,12.7,116,602.39,3570.23,28.736154,77.23665,True,0.749
+GK-10232,Delhi,Janakpuri,Zepto,Zomato,Bike,13.0,36,632.66,3367.97,28.732737,77.237905,False,0.838
+GK-10233,Delhi,Lajpat Nagar,Zepto,Zomato,Bike,11.3,63,710.12,4251.32,28.598466,77.230247,False,0.553
+GK-10234,Chennai,T. Nagar,Swiggy,,Bicycle,14.0,90,850.77,5374.97,13.084716,80.235052,False,0.869
+GK-10235,Delhi,Janakpuri,Zomato,Swiggy,Scooter,9.2,5,662.14,4067.81,28.581758,77.233519,False,0.904
+GK-10236,Delhi,Janakpuri,Swiggy,Zepto,Scooter,12.4,90,893.46,4902.31,28.530052,77.208898,False,0.503
+GK-10237,Mumbai,Kurla,Zepto,Zomato,Bicycle,8.9,51,660.79,3748.69,19.099043,72.910411,True,0.694
+GK-10238,Chennai,Mylapore,Zomato,Swiggy,Bicycle,7.9,117,506.03,3000.37,12.871959,80.240517,False,0.834
+GK-10239,Mumbai,Goregaon,Zepto,Swiggy,Bicycle,9.7,12,609.85,3487.59,19.094946,72.932233,False,0.76
+GK-10240,Mumbai,Powai,Zepto,Zomato,Bicycle,6.2,56,526.49,3112.53,19.099706,72.895422,False,0.767
+GK-10241,Chennai,T. Nagar,Swiggy,Zomato,Scooter,12.1,67,470.08,2363.26,13.093896,80.257718,False,0.978
+GK-10242,Chennai,Velachery,Swiggy,,Bike,7.6,53,662.1,3659.71,13.12811,80.15904,True,0.967
+GK-10243,Delhi,Karol Bagh,Zepto,,Bicycle,6.8,73,758.81,4143.81,28.621468,77.151355,False,0.642
+GK-10244,Delhi,Pitampura,Zepto,,Bike,12.4,117,413.18,2322.21,28.652583,77.24323,False,0.636
+GK-10245,Delhi,Dwarka,Zomato,,Scooter,7.0,39,759.53,4395.97,28.545287,77.236224,True,0.591
+GK-10246,Chennai,Guindy,Swiggy,Zepto,Scooter,11.7,34,724.07,4495.74,12.926969,80.294439,False,0.742
+GK-10247,Delhi,Dwarka,Zepto,Zomato,Bicycle,10.4,119,559.42,3301.93,28.510853,77.22663,True,0.976
+GK-10248,Mumbai,Goregaon,Swiggy,Zepto,Scooter,12.6,28,657.41,4115.25,19.053011,72.899428,False,0.706
+GK-10249,Chennai,Tambaram,Swiggy,,Bike,13.2,86,760.18,4114.25,12.956026,80.185531,True,0.89
+GK-10250,Mumbai,Navi Mumbai,Swiggy,Zomato,Scooter,12.6,35,972.94,5720.8,19.023884,72.901102,False,0.726
+GK-10251,Chennai,Chromepet,Swiggy,Zomato,Bicycle,7.3,30,575.77,2961.51,13.071062,80.27942,False,0.608
+GK-10252,Mumbai,Borivali,Swiggy,Zepto,Bike,6.2,104,883.69,5206.45,19.136674,72.850153,False,0.695
+GK-10253,Mumbai,Andheri,Zomato,Swiggy,Bike,10.0,73,943.51,5289.77,19.246946,72.837737,True,0.848
+GK-10254,Delhi,Rohini,Swiggy,,Bike,9.4,20,846.46,5151.99,28.747814,77.125679,True,0.552
+GK-10255,Chennai,Guindy,Swiggy,,Scooter,10.6,6,865.61,5489.08,12.932248,80.161913,False,0.543
+GK-10256,Chennai,Anna Nagar,Swiggy,Zomato,Bicycle,7.5,57,534.88,2728.65,12.956499,80.160414,False,0.76
+GK-10257,Mumbai,Bandra,Zepto,Swiggy,Scooter,12.4,61,593.31,3545.81,19.058428,72.890202,False,0.94
+GK-10258,Delhi,Janakpuri,Zepto,Swiggy,Scooter,10.3,68,524.11,3059.06,28.667372,77.298828,False,0.831
+GK-10259,Chennai,Chromepet,Swiggy,,Bicycle,11.8,70,514.98,3314.64,12.989562,80.159021,False,0.781
+GK-10260,Delhi,Nehru Place,Zepto,Swiggy,Bike,7.4,65,551.4,3382.42,28.633957,77.119335,False,0.725
+GK-10261,Delhi,Chandni Chowk,Zepto,Swiggy,Scooter,8.8,95,794.41,4251.65,28.666228,77.25909,True,0.964
+GK-10262,Delhi,Dwarka,Swiggy,Zepto,Bicycle,9.2,22,710.95,3649.79,28.710508,77.204192,True,0.812
+GK-10263,Chennai,T. Nagar,Zomato,,Bicycle,12.0,78,817.01,4953.63,12.888314,80.27391,False,0.891
+GK-10264,Mumbai,Goregaon,Zomato,,Bicycle,6.3,41,539.41,3145.14,19.090034,72.831394,False,0.968
+GK-10265,Delhi,Janakpuri,Zepto,Zomato,Bike,8.4,105,566.54,3270.93,28.599245,77.189441,False,0.8
+GK-10266,Mumbai,Bandra,Zepto,,Bicycle,13.4,96,737.7,3817.27,19.212856,72.847106,False,0.965
+GK-10267,Chennai,Porur,Zomato,Swiggy,Scooter,12.5,47,699.77,4344.79,12.964187,80.281696,True,0.934
+GK-10268,Delhi,Chandni Chowk,Zomato,,Bike,12.3,44,623.93,3443.56,28.600745,77.134705,True,0.847
+GK-10269,Delhi,Karol Bagh,Zepto,Zomato,Scooter,13.8,23,664.55,4182.03,28.660243,77.264496,False,0.566
+GK-10270,Mumbai,Powai,Swiggy,Zomato,Bike,13.4,15,1069.73,5988.34,19.191202,72.842729,False,0.751
+GK-10271,Delhi,Dwarka,Zepto,,Scooter,7.2,107,654.98,3407.7,28.591884,77.113634,True,0.513
+GK-10272,Chennai,Sholinganallur,Swiggy,,Bicycle,13.7,75,776.16,4392.5,12.979749,80.196772,False,0.753
+GK-10273,Delhi,Dwarka,Zomato,Zepto,Bicycle,6.8,100,708.1,4231.11,28.660207,77.143208,True,0.81
+GK-10274,Delhi,Connaught Place,Zomato,,Scooter,7.2,49,596.7,3863.94,28.748717,77.111556,False,0.848
+GK-10275,Chennai,Chromepet,Zepto,Swiggy,Bike,7.9,88,690.6,3557.67,12.892675,80.168208,False,0.652
+GK-10276,Delhi,Saket,Swiggy,Zepto,Bicycle,11.5,51,702.35,3834.4,28.749174,77.262794,False,0.808
+GK-10277,Chennai,Anna Nagar,Zepto,Swiggy,Scooter,11.0,112,590.69,3739.01,13.008112,80.213913,False,0.565
+GK-10278,Mumbai,Navi Mumbai,Zepto,,Bicycle,9.6,75,623.93,3839.64,19.103532,72.92758,False,0.867
+GK-10279,Chennai,Chromepet,Zepto,,Scooter,6.1,7,524.34,2826.05,12.974846,80.222202,False,0.51
+GK-10280,Chennai,Anna Nagar,Zepto,Zomato,Scooter,12.1,48,716.33,4630.22,12.914561,80.151818,False,0.621
+GK-10281,Chennai,T. Nagar,Swiggy,,Bicycle,12.4,55,532.21,3098.49,13.137873,80.223178,False,0.555
+GK-10282,Chennai,T. Nagar,Zepto,,Bike,9.6,15,521.04,2898.98,12.947403,80.260604,False,0.738
+GK-10283,Mumbai,Thane,Swiggy,Zepto,Scooter,9.2,62,693.99,4464.44,19.114862,72.922052,False,0.946
+GK-10284,Delhi,Rohini,Zomato,Zepto,Bicycle,12.3,45,871.35,4406.97,28.609401,77.150934,True,0.92
+GK-10285,Mumbai,Navi Mumbai,Swiggy,Zomato,Bike,13.2,24,531.88,3373.54,19.115369,72.902836,False,0.83
+GK-10286,Mumbai,Andheri,Zepto,Swiggy,Scooter,11.1,60,603.93,3483.67,19.129602,72.839522,True,0.869
+GK-10287,Mumbai,Malad,Zomato,,Scooter,11.4,57,725.26,3704.72,19.010418,72.831023,True,0.858
+GK-10288,Delhi,Saket,Zepto,Swiggy,Scooter,6.6,59,579.63,3473.18,28.574134,77.169941,False,0.887
+GK-10289,Chennai,Anna Nagar,Zepto,,Bicycle,7.5,66,894.82,5500.06,12.902233,80.164759,False,0.83
+GK-10290,Mumbai,Kurla,Swiggy,Zomato,Scooter,8.1,80,791.07,4685.13,19.095485,72.846739,True,0.561
+GK-10291,Chennai,Adyar,Swiggy,Zepto,Bike,12.2,102,896.67,5785.97,13.043171,80.229545,True,0.521
+GK-10292,Chennai,Anna Nagar,Zomato,Zepto,Bike,12.4,4,918.34,4768.15,13.074422,80.271765,False,0.828
+GK-10293,Delhi,Chandni Chowk,Swiggy,Zomato,Scooter,8.7,72,969.89,5478.05,28.732021,77.144923,True,0.686
+GK-10294,Mumbai,Borivali,Zepto,,Bicycle,9.5,107,786.92,4981.51,19.060173,72.835795,False,0.599
+GK-10295,Delhi,Dwarka,Zomato,,Bike,11.2,59,722.15,4527.72,28.571477,77.263189,True,0.931
+GK-10296,Chennai,Tambaram,Swiggy,Zepto,Bicycle,13.4,58,825.63,5089.74,12.988162,80.2763,True,0.864
+GK-10297,Mumbai,Malad,Zepto,,Scooter,11.2,41,577.95,3702.4,19.044357,72.890853,True,0.992
+GK-10298,Chennai,Porur,Swiggy,Zepto,Bike,6.3,106,685.84,3949.6,13.067794,80.272668,True,0.607
+GK-10299,Mumbai,Powai,Zepto,Zomato,Bike,12.7,59,687.12,3959.56,19.1832,72.890491,False,0.795
+GK-10300,Chennai,Mylapore,Zomato,,Scooter,8.4,71,971.71,5091.86,13.111997,80.245444,False,0.881
+GK-10301,Chennai,Porur,Zomato,,Scooter,9.7,32,793.53,5148.2,12.852799,80.187002,True,0.863
+GK-10302,Delhi,Rohini,Swiggy,,Bicycle,6.8,18,893.2,5291.3,28.551009,77.211017,True,0.867
+GK-10303,Mumbai,Thane,Swiggy,Zepto,Scooter,7.5,97,636.58,3187.89,19.088846,72.921893,False,0.777
+GK-10304,Mumbai,Dadar,Swiggy,Zomato,Bike,12.1,36,482.52,3133.73,19.037222,72.859729,True,0.938
+GK-10305,Chennai,T. Nagar,Zepto,Swiggy,Bicycle,8.9,13,534.05,3145.32,12.984583,80.258311,False,0.943
+GK-10306,Chennai,Tambaram,Zomato,,Bicycle,9.1,61,952.16,5895.1,12.850965,80.242938,True,0.678
+GK-10307,Mumbai,Navi Mumbai,Zepto,,Bicycle,6.7,45,587.36,2993.94,19.147051,72.882526,False,0.821
+GK-10308,Mumbai,Goregaon,Swiggy,Zepto,Bike,10.6,64,979.2,5292.31,19.150872,72.907941,False,0.902
+GK-10309,Delhi,Lajpat Nagar,Zomato,,Bike,12.6,49,982.99,5407.78,28.624564,77.115412,False,0.529
+GK-10310,Mumbai,Bandra,Zomato,Zepto,Scooter,12.3,8,842.17,4625.44,19.129317,72.877226,False,0.574
+GK-10311,Chennai,Guindy,Zomato,Swiggy,Bicycle,9.5,114,802.31,4896.89,12.87658,80.183092,False,0.799
+GK-10312,Chennai,Chromepet,Zepto,,Scooter,14.0,63,728.48,3771.71,12.976374,80.245427,False,0.893
+GK-10313,Mumbai,Thane,Zepto,Swiggy,Scooter,9.3,120,786.51,4625.98,19.209951,72.869898,False,0.786
+GK-10314,Mumbai,Borivali,Zomato,,Scooter,7.5,68,488.38,2641.94,19.006549,72.823145,False,0.916
+GK-10315,Chennai,Adyar,Zomato,Swiggy,Scooter,10.1,95,523.83,2956.75,12.939618,80.291102,True,0.63
+GK-10316,Chennai,Sholinganallur,Zepto,Swiggy,Bike,13.0,35,644.68,3352.48,13.090793,80.218728,False,0.741
+GK-10317,Mumbai,Powai,Zomato,,Bicycle,6.6,82,760.27,4633.28,19.181985,72.88454,False,0.718
+GK-10318,Chennai,Guindy,Zomato,Zepto,Scooter,12.1,56,753.22,4846.91,12.890606,80.262706,False,0.828
+GK-10319,Delhi,Pitampura,Swiggy,,Bicycle,6.6,46,535.32,2874.92,28.514264,77.156437,False,0.631
+GK-10320,Chennai,Guindy,Swiggy,,Bicycle,13.3,53,573.96,2926.08,13.077819,80.217461,False,0.888
+GK-10321,Delhi,Lajpat Nagar,Zepto,,Bicycle,9.9,115,561.58,2925.2,28.508403,77.112531,False,0.953
+GK-10322,Chennai,Guindy,Swiggy,,Bicycle,10.3,22,435.58,2807.35,13.11995,80.153274,False,0.832
+GK-10323,Delhi,Lajpat Nagar,Zepto,,Bicycle,10.5,54,546.0,2943.07,28.734206,77.110452,False,0.709
+GK-10324,Chennai,Chromepet,Zepto,Swiggy,Scooter,11.8,75,533.44,3154.12,13.019599,80.21959,False,0.986
+GK-10325,Delhi,Karol Bagh,Swiggy,,Bicycle,8.8,110,785.06,4220.84,28.528524,77.130249,False,0.613
+GK-10326,Mumbai,Thane,Swiggy,,Bicycle,12.8,58,852.63,4349.69,19.028692,72.931818,False,0.861
+GK-10327,Mumbai,Goregaon,Swiggy,Zepto,Scooter,11.7,27,1099.48,6296.77,19.135885,72.830624,False,0.729
+GK-10328,Chennai,Guindy,Zomato,Swiggy,Bike,7.3,21,632.74,3222.8,12.97353,80.247646,False,0.773
+GK-10329,Chennai,Velachery,Zomato,Swiggy,Bicycle,10.1,102,1001.5,6188.69,13.091921,80.218886,True,0.526
+GK-10330,Mumbai,Thane,Swiggy,,Scooter,7.6,116,593.64,3150.64,19.082554,72.918378,False,0.76
+GK-10331,Mumbai,Dadar,Zepto,Zomato,Bike,13.0,24,623.43,3539.12,19.219895,72.933175,True,0.619
+GK-10332,Chennai,Chromepet,Swiggy,,Scooter,13.9,9,690.84,3563.5,13.122766,80.230805,False,0.749
+GK-10333,Delhi,Karol Bagh,Zepto,,Bike,11.3,60,589.62,3801.11,28.705526,77.176084,False,0.888
+GK-10334,Mumbai,Kurla,Zepto,Zomato,Bike,7.6,72,425.38,2636.03,19.198214,72.895087,True,0.817
+GK-10335,Chennai,Anna Nagar,Zomato,Swiggy,Scooter,9.2,90,730.1,4412.61,13.124527,80.229954,False,0.579
+GK-10336,Mumbai,Powai,Zomato,Zepto,Scooter,12.3,68,825.07,4299.5,19.226536,72.855998,False,0.992
+GK-10337,Mumbai,Malad,Swiggy,Zomato,Bicycle,7.6,21,635.84,3324.27,19.046056,72.936219,True,0.827
+GK-10338,Delhi,Connaught Place,Zepto,Zomato,Scooter,9.5,74,589.63,3803.52,28.720604,77.260721,False,0.753
+GK-10339,Chennai,Sholinganallur,Swiggy,Zepto,Bike,9.3,101,730.55,3834.61,13.145233,80.250188,False,0.817
+GK-10340,Chennai,Anna Nagar,Zomato,,Bike,13.1,110,521.65,3171.13,12.853782,80.233963,False,0.764
+GK-10341,Delhi,Dwarka,Swiggy,Zepto,Scooter,13.1,7,661.71,4160.35,28.519852,77.246299,True,0.594
+GK-10342,Delhi,Connaught Place,Zomato,,Scooter,12.6,34,971.18,5524.94,28.578588,77.194234,False,0.911
+GK-10343,Delhi,Dwarka,Zomato,Swiggy,Bike,8.9,44,752.62,3959.26,28.623553,77.26565,True,0.668
+GK-10344,Chennai,Guindy,Swiggy,Zomato,Bike,11.7,40,615.21,3676.94,12.954382,80.217553,False,0.874
+GK-10345,Delhi,Rohini,Zepto,Zomato,Scooter,11.0,82,638.39,4129.53,28.588094,77.26829,True,0.736
+GK-10346,Chennai,Velachery,Swiggy,Zepto,Bike,11.1,110,755.87,3977.63,12.947531,80.252949,True,0.535
+GK-10347,Chennai,Sholinganallur,Zepto,,Bicycle,12.8,58,581.49,3468.19,12.918154,80.275556,False,0.64
+GK-10348,Chennai,Anna Nagar,Swiggy,Zepto,Bike,11.6,10,409.58,2449.18,12.913793,80.154978,False,0.652
+GK-10349,Chennai,Porur,Zepto,,Scooter,13.5,12,718.88,4311.47,13.111361,80.26491,True,0.894
+GK-10350,Chennai,Tambaram,Zepto,,Bike,8.1,84,740.9,4216.12,13.018132,80.166648,True,0.724
+GK-10351,Mumbai,Navi Mumbai,Swiggy,,Bike,12.9,41,797.56,4120.26,19.136662,72.869452,False,0.988
+GK-10352,Delhi,Connaught Place,Zepto,Zomato,Bike,9.4,77,666.72,4087.62,28.714585,77.158444,False,0.955
+GK-10353,Delhi,Rohini,Zepto,,Bike,12.4,71,763.25,4165.15,28.504502,77.292562,True,0.863
+GK-10354,Delhi,Dwarka,Zepto,,Bicycle,12.6,104,798.91,4110.23,28.528145,77.240737,True,0.77
+GK-10355,Mumbai,Thane,Swiggy,Zepto,Scooter,7.9,9,642.03,3786.4,19.003101,72.88094,False,0.651
+GK-10356,Mumbai,Malad,Zomato,Zepto,Bicycle,8.4,6,857.52,5146.58,19.012036,72.937376,True,0.926
+GK-10357,Delhi,Dwarka,Zomato,Swiggy,Bicycle,10.7,88,570.41,3056.98,28.723076,77.137066,True,0.539
+GK-10358,Mumbai,Bandra,Zepto,,Scooter,12.4,21,712.47,3630.36,19.248859,72.93124,False,0.761
+GK-10359,Chennai,Guindy,Zepto,Zomato,Bicycle,12.7,26,629.93,4009.15,13.029694,80.16724,False,0.547
+GK-10360,Mumbai,Powai,Zepto,Zomato,Bicycle,11.4,27,797.99,4916.27,19.107607,72.861203,False,0.717
+GK-10361,Chennai,Velachery,Zepto,Zomato,Bike,10.8,41,1103.13,6560.27,13.117757,80.216507,True,0.804
+GK-10362,Chennai,Adyar,Swiggy,Zomato,Scooter,10.7,43,547.84,3139.95,13.003709,80.165634,True,0.692
+GK-10363,Mumbai,Malad,Zepto,Zomato,Scooter,11.2,8,817.43,4707.91,19.237633,72.898085,True,0.872
+GK-10364,Mumbai,Borivali,Zomato,Zepto,Bike,11.1,114,684.17,3564.55,19.090463,72.881424,False,0.523
+GK-10365,Mumbai,Goregaon,Zomato,Swiggy,Scooter,8.2,59,672.35,3559.52,19.242883,72.863075,False,0.741
+GK-10366,Delhi,Nehru Place,Zomato,Zepto,Bike,10.9,67,565.85,3015.19,28.629143,77.101101,False,0.504
+GK-10367,Mumbai,Powai,Zomato,,Scooter,6.3,106,599.59,3512.44,19.027006,72.864052,False,0.901
+GK-10368,Chennai,Porur,Swiggy,Zepto,Bicycle,10.1,109,756.6,3912.2,12.969105,80.163064,True,0.809
+GK-10369,Chennai,Sholinganallur,Zomato,Zepto,Bike,8.8,14,672.93,4073.51,13.002224,80.281133,False,0.747
+GK-10370,Delhi,Lajpat Nagar,Zomato,Zepto,Bicycle,13.9,95,640.13,4072.13,28.598644,77.184366,False,0.706
+GK-10371,Delhi,Rohini,Zepto,Zomato,Scooter,11.7,61,602.07,3872.87,28.651976,77.161875,True,0.912
+GK-10372,Chennai,Guindy,Zepto,Zomato,Scooter,12.6,85,721.73,4102.57,13.055977,80.167173,False,0.692
+GK-10373,Chennai,Velachery,Zepto,,Scooter,9.0,50,607.78,3103.64,12.886308,80.212842,True,0.876
+GK-10374,Mumbai,Dadar,Swiggy,Zomato,Bicycle,6.6,90,776.79,4575.67,19.167143,72.908227,True,0.681
+GK-10375,Delhi,Connaught Place,Swiggy,Zomato,Bike,6.1,103,674.75,4258.04,28.659024,77.282657,False,0.806
+GK-10376,Mumbai,Goregaon,Zomato,Zepto,Bicycle,11.8,8,708.75,3857.42,19.035534,72.821522,False,0.711
+GK-10377,Mumbai,Dadar,Zepto,Zomato,Scooter,9.9,51,588.28,3434.36,19.1443,72.825686,True,0.562
+GK-10378,Delhi,Dwarka,Zepto,Swiggy,Bicycle,8.7,50,828.32,4977.75,28.711401,77.238499,True,0.715
+GK-10379,Delhi,Karol Bagh,Zepto,Zomato,Bike,8.2,18,893.1,5535.05,28.576578,77.257797,False,0.723
+GK-10380,Chennai,T. Nagar,Zomato,,Scooter,12.6,120,427.1,2587.53,13.02466,80.205676,False,0.801
+GK-10381,Mumbai,Bandra,Zomato,Zepto,Bicycle,11.5,61,596.02,3107.58,19.093638,72.841692,False,0.715
+GK-10382,Chennai,Chromepet,Zomato,,Scooter,13.1,29,555.34,3060.43,12.857634,80.246873,False,0.818
+GK-10383,Chennai,T. Nagar,Swiggy,Zepto,Bike,6.6,119,635.48,3754.84,12.972889,80.196683,False,0.839
+GK-10384,Mumbai,Powai,Swiggy,,Scooter,8.9,89,983.71,5664.38,19.035138,72.883127,False,0.514
+GK-10385,Delhi,Dwarka,Zepto,,Scooter,13.7,118,630.69,3520.5,28.596052,77.107799,True,0.515
+GK-10386,Delhi,Rohini,Zepto,,Bicycle,7.3,85,429.43,2349.39,28.725021,77.123228,True,0.978
+GK-10387,Chennai,Guindy,Zepto,Swiggy,Bike,13.1,29,646.75,3513.54,13.030883,80.274006,False,0.992
+GK-10388,Chennai,Mylapore,Zomato,Swiggy,Scooter,13.7,74,469.05,2734.83,12.952116,80.231211,False,0.577
+GK-10389,Mumbai,Goregaon,Zomato,,Bike,10.3,82,477.06,2601.65,19.190475,72.928374,False,0.72
+GK-10390,Chennai,Velachery,Zomato,Zepto,Bicycle,8.1,96,510.78,2998.64,13.139925,80.233656,True,0.674
+GK-10391,Delhi,Janakpuri,Zomato,Zepto,Bicycle,7.1,13,570.24,3194.87,28.611011,77.225247,False,0.744
+GK-10392,Chennai,Guindy,Zepto,Swiggy,Scooter,14.0,63,743.78,4159.74,13.020813,80.243099,False,0.601
+GK-10393,Mumbai,Thane,Zomato,Swiggy,Bicycle,6.3,85,834.92,5381.93,19.118887,72.890593,False,0.614
+GK-10394,Mumbai,Dadar,Swiggy,Zepto,Bicycle,13.3,120,739.88,3837.93,19.217492,72.836985,True,0.895
+GK-10395,Chennai,Velachery,Zepto,Swiggy,Scooter,12.4,25,965.37,5042.31,12.93273,80.281564,True,0.972
+GK-10396,Chennai,Guindy,Zepto,Swiggy,Scooter,9.7,70,697.98,3789.11,13.109064,80.23831,False,0.688
+GK-10397,Delhi,Dwarka,Zomato,Swiggy,Bicycle,7.6,74,758.58,4353.1,28.69045,77.177308,True,0.756
+GK-10398,Delhi,Rohini,Zepto,Zomato,Bicycle,10.6,72,879.09,4659.8,28.691132,77.214706,True,0.978
+GK-10399,Chennai,Sholinganallur,Zepto,Swiggy,Bicycle,6.9,78,649.47,4117.4,13.106189,80.215872,False,0.923
+GK-10400,Chennai,T. Nagar,Zepto,,Bicycle,6.5,119,679.71,3418.04,13.00313,80.243989,False,0.963
+GK-10401,Mumbai,Goregaon,Zepto,Swiggy,Bike,9.8,14,850.53,4424.16,19.171931,72.913952,False,0.846
+GK-10402,Chennai,Chromepet,Zomato,,Bike,8.4,102,871.81,4370.64,12.933628,80.181606,False,0.979
+GK-10403,Mumbai,Malad,Zepto,,Bike,14.0,67,620.27,3114.67,19.169205,72.927701,True,0.647
+GK-10404,Mumbai,Thane,Zomato,,Scooter,11.9,65,777.26,4654.09,19.035713,72.917946,False,0.884
+GK-10405,Chennai,Porur,Zomato,Zepto,Bike,12.1,92,807.35,4627.28,13.103776,80.242041,True,0.544
+GK-10406,Chennai,T. Nagar,Zomato,Zepto,Scooter,6.6,63,453.96,2820.16,12.869803,80.202323,False,0.555
+GK-10407,Chennai,Guindy,Zepto,Swiggy,Scooter,13.6,114,455.12,2480.11,12.871695,80.293267,False,0.761
+GK-10408,Mumbai,Goregaon,Zepto,Zomato,Scooter,6.6,20,918.25,5146.16,19.176772,72.826529,False,0.536
+GK-10409,Delhi,Janakpuri,Zepto,Swiggy,Scooter,8.4,34,700.46,4478.63,28.558096,77.156201,False,0.902
+GK-10410,Delhi,Dwarka,Zomato,Zepto,Bike,9.2,22,658.24,4257.81,28.619109,77.145206,True,0.82
+GK-10411,Chennai,Adyar,Zomato,Zepto,Bicycle,10.8,57,795.0,5034.73,12.957344,80.247173,True,0.561
+GK-10412,Chennai,T. Nagar,Zomato,,Bicycle,10.0,44,1028.12,5513.7,13.037435,80.160766,False,0.841
+GK-10413,Chennai,T. Nagar,Zomato,,Scooter,11.7,67,506.45,2927.41,13.09676,80.270594,False,0.776
+GK-10414,Delhi,Nehru Place,Swiggy,Zomato,Scooter,7.1,68,589.18,3502.28,28.624174,77.156855,False,0.567
+GK-10415,Delhi,Saket,Swiggy,,Scooter,6.4,10,833.49,4806.48,28.687161,77.163517,False,0.5
+GK-10416,Chennai,Anna Nagar,Zomato,,Bicycle,6.4,90,843.26,4528.51,12.868807,80.275901,False,0.502
+GK-10417,Delhi,Lajpat Nagar,Zepto,Swiggy,Bike,11.9,59,545.07,2946.42,28.579068,77.120378,False,0.68
+GK-10418,Chennai,Anna Nagar,Zepto,Zomato,Scooter,12.7,50,854.11,4753.96,13.117562,80.215073,False,0.955
+GK-10419,Chennai,Porur,Swiggy,,Bicycle,13.7,28,600.44,3351.34,12.876787,80.253053,True,0.747
+GK-10420,Delhi,Janakpuri,Zomato,Swiggy,Scooter,11.1,68,778.34,5001.74,28.666596,77.29321,False,0.881
+GK-10421,Delhi,Janakpuri,Zomato,,Bicycle,11.6,82,577.54,3445.73,28.574513,77.121073,False,0.891
+GK-10422,Chennai,T. Nagar,Swiggy,Zepto,Scooter,6.4,105,761.19,4044.45,13.00012,80.214909,False,0.729
+GK-10423,Delhi,Janakpuri,Zomato,Swiggy,Bike,8.9,81,681.25,3831.87,28.592453,77.110471,False,0.884
+GK-10424,Mumbai,Malad,Zepto,Swiggy,Bike,12.6,8,640.5,3409.77,19.164338,72.881397,True,0.94
+GK-10425,Chennai,Guindy,Zomato,,Scooter,11.4,23,772.38,4616.87,13.032326,80.194295,False,0.568
+GK-10426,Mumbai,Thane,Swiggy,Zepto,Bicycle,11.9,44,861.28,5456.49,19.098783,72.912717,False,0.6
+GK-10427,Chennai,Porur,Zepto,,Scooter,8.3,79,494.69,2856.24,12.960336,80.158714,True,0.556
+GK-10428,Delhi,Janakpuri,Zepto,,Scooter,8.1,94,471.2,2704.36,28.504832,77.124874,False,0.707
+GK-10429,Mumbai,Kurla,Zomato,Swiggy,Scooter,9.2,46,529.93,3018.56,19.132734,72.897367,True,0.505
+GK-10430,Mumbai,Bandra,Zomato,,Scooter,13.7,105,1002.69,5797.5,19.077966,72.920619,False,0.886
+GK-10431,Mumbai,Andheri,Zepto,Zomato,Scooter,13.8,87,732.45,4549.05,19.031388,72.822203,True,0.885
+GK-10432,Mumbai,Navi Mumbai,Swiggy,,Bike,7.0,78,847.13,4237.37,19.12949,72.865252,False,0.686
+GK-10433,Delhi,Rohini,Zepto,,Bicycle,8.4,83,588.67,2964.18,28.661615,77.294839,True,0.924
+GK-10434,Delhi,Rohini,Zepto,Swiggy,Bike,13.2,77,800.53,4081.54,28.614499,77.179601,True,0.651
+GK-10435,Mumbai,Bandra,Swiggy,Zomato,Scooter,7.8,44,801.54,4577.37,19.061651,72.88293,False,0.874
+GK-10436,Delhi,Rohini,Zomato,,Bike,6.5,56,780.56,4132.09,28.518901,77.173136,True,0.613
+GK-10437,Mumbai,Navi Mumbai,Zomato,,Bicycle,7.1,11,707.74,3694.72,19.155603,72.921572,False,0.789
+GK-10438,Mumbai,Dadar,Zepto,Swiggy,Bicycle,12.5,45,505.28,3221.78,19.168533,72.853788,True,0.673
+GK-10439,Mumbai,Powai,Zepto,Zomato,Scooter,8.3,26,936.72,4771.0,19.117497,72.935718,False,0.854
+GK-10440,Delhi,Janakpuri,Zomato,,Scooter,7.2,90,536.64,3086.17,28.739484,77.205932,False,0.621
+GK-10441,Mumbai,Kurla,Zepto,Zomato,Bike,11.4,35,676.63,3849.68,19.01906,72.855711,True,0.903
+GK-10442,Delhi,Janakpuri,Zomato,Swiggy,Scooter,10.4,102,615.44,3123.34,28.541437,77.189108,False,0.605
+GK-10443,Delhi,Saket,Zepto,,Scooter,12.7,44,687.54,3687.25,28.745298,77.258629,False,0.927
+GK-10444,Delhi,Karol Bagh,Zepto,,Scooter,13.7,40,707.19,3613.47,28.564885,77.187399,False,0.797
+GK-10445,Chennai,Chromepet,Zepto,,Scooter,11.0,118,749.78,4769.99,13.144353,80.178516,False,0.896
+GK-10446,Delhi,Karol Bagh,Swiggy,Zepto,Bike,13.5,40,704.0,4023.61,28.744327,77.251462,False,0.581
+GK-10447,Mumbai,Bandra,Zomato,Zepto,Bicycle,11.7,36,785.81,4120.83,19.061835,72.90328,False,0.833
+GK-10448,Mumbai,Powai,Swiggy,Zomato,Bicycle,10.5,38,699.05,4466.43,19.003026,72.821175,False,0.679
+GK-10449,Mumbai,Kurla,Swiggy,Zomato,Bicycle,7.8,98,934.34,5860.24,19.158591,72.84887,True,0.661
+GK-10450,Mumbai,Borivali,Swiggy,Zomato,Bicycle,11.8,119,676.93,3504.98,19.007292,72.882516,False,0.831
+GK-10451,Mumbai,Borivali,Zepto,Swiggy,Bike,8.3,16,569.06,2883.64,19.099459,72.939539,False,0.997
+GK-10452,Delhi,Karol Bagh,Zepto,Zomato,Bike,12.1,91,498.38,2923.34,28.688566,77.283685,False,0.975
+GK-10453,Chennai,Adyar,Zepto,Swiggy,Scooter,8.9,87,459.51,2544.71,13.086265,80.18765,True,0.782
+GK-10454,Delhi,Nehru Place,Zepto,Swiggy,Scooter,11.3,45,593.49,3164.06,28.72956,77.120361,False,0.753
+GK-10455,Delhi,Connaught Place,Swiggy,,Bicycle,6.3,33,610.34,3310.31,28.509005,77.135044,False,0.933
+GK-10456,Mumbai,Andheri,Swiggy,Zepto,Bike,13.6,8,468.96,2543.52,19.145022,72.887171,True,0.879
+GK-10457,Delhi,Nehru Place,Swiggy,,Scooter,8.8,116,997.51,5615.16,28.723524,77.289291,False,0.946
+GK-10458,Chennai,Adyar,Zomato,,Bicycle,12.2,17,645.87,3550.57,12.911404,80.23867,True,0.593
+GK-10459,Delhi,Lajpat Nagar,Zomato,,Bicycle,12.8,71,179.29,1149.46,28.551769,77.114232,False,0.535
+GK-10460,Delhi,Rohini,Zepto,Zomato,Scooter,10.1,28,889.84,5478.46,28.708956,77.166438,True,0.847
+GK-10461,Chennai,Guindy,Swiggy,,Scooter,11.2,86,644.68,3496.56,12.895479,80.281382,False,0.77
+GK-10462,Delhi,Rohini,Swiggy,,Scooter,9.4,105,803.54,4384.35,28.513659,77.294616,True,0.613
+GK-10463,Delhi,Pitampura,Zepto,Swiggy,Bike,8.4,82,316.24,2039.83,28.557604,77.100295,False,0.865
+GK-10464,Mumbai,Malad,Zomato,,Scooter,7.8,15,882.61,4843.71,19.212106,72.874942,True,0.651
+GK-10465,Delhi,Dwarka,Swiggy,Zomato,Scooter,11.7,45,823.08,5228.95,28.704195,77.136323,True,0.685
+GK-10466,Chennai,Adyar,Zomato,Zepto,Bike,12.5,61,918.96,5572.56,13.048304,80.161768,True,0.772
+GK-10467,Delhi,Karol Bagh,Zomato,,Bicycle,7.3,77,441.98,2238.02,28.695158,77.216755,False,0.976
+GK-10468,Chennai,Anna Nagar,Zepto,Zomato,Bicycle,8.1,34,461.73,2664.54,13.064327,80.263851,False,0.551
+GK-10469,Chennai,Velachery,Zomato,Zepto,Bike,10.1,55,818.94,4951.16,12.960784,80.289939,True,0.914
+GK-10470,Mumbai,Thane,Zepto,Zomato,Bicycle,11.7,19,822.41,4450.15,19.173649,72.914768,False,0.931
+GK-10471,Mumbai,Kurla,Zomato,,Bike,12.5,32,688.87,4455.47,19.04881,72.864894,True,0.668
+GK-10472,Chennai,Tambaram,Swiggy,Zepto,Bicycle,12.9,81,858.73,4783.79,13.018622,80.292064,True,0.748
+GK-10473,Delhi,Chandni Chowk,Zepto,,Scooter,7.3,100,840.63,4234.92,28.696551,77.246889,True,0.692
+GK-10474,Mumbai,Borivali,Swiggy,,Bicycle,12.7,115,690.96,4021.14,19.058743,72.911633,False,0.909
+GK-10475,Chennai,Sholinganallur,Zomato,,Bicycle,13.7,50,768.22,4835.15,12.865501,80.225719,False,0.859
+GK-10476,Chennai,Chromepet,Swiggy,Zomato,Bicycle,7.4,119,736.55,3856.51,12.968966,80.169757,False,0.933
+GK-10477,Mumbai,Borivali,Zepto,,Bike,8.5,25,908.01,5625.14,19.072511,72.933284,False,0.836
+GK-10478,Delhi,Janakpuri,Zomato,Swiggy,Bicycle,8.0,30,866.74,5210.0,28.708208,77.281217,False,0.506
+GK-10479,Mumbai,Navi Mumbai,Zomato,Swiggy,Bicycle,6.4,61,990.21,5475.3,19.137215,72.857392,False,0.653
+GK-10480,Chennai,Tambaram,Swiggy,,Scooter,11.0,62,882.66,4791.64,12.971358,80.160253,True,0.892
+GK-10481,Mumbai,Andheri,Zepto,Zomato,Bicycle,9.5,107,569.73,3168.2,19.171361,72.863219,True,0.528
+GK-10482,Delhi,Connaught Place,Zomato,Zepto,Bike,13.6,99,908.09,5563.33,28.658071,77.139798,False,0.709
+GK-10483,Chennai,Chromepet,Swiggy,Zomato,Scooter,6.8,48,871.99,5642.26,12.933356,80.191448,False,0.716
+GK-10484,Mumbai,Bandra,Zepto,Swiggy,Bike,6.5,64,500.75,3057.99,19.242669,72.834729,False,0.702
+GK-10485,Chennai,Anna Nagar,Zomato,Swiggy,Bike,11.6,102,711.62,3840.2,12.976819,80.201979,False,0.699
+GK-10486,Mumbai,Malad,Zomato,Zepto,Scooter,7.6,115,437.88,2585.88,19.071865,72.905378,True,0.984
+GK-10487,Delhi,Chandni Chowk,Swiggy,,Bicycle,6.6,115,680.79,3497.97,28.518896,77.290285,True,0.649
+GK-10488,Mumbai,Dadar,Zepto,Zomato,Bike,10.8,26,924.79,4971.99,19.066851,72.821964,True,0.983
+GK-10489,Mumbai,Malad,Zepto,Swiggy,Bicycle,11.4,32,887.16,4796.56,19.176657,72.899301,True,0.656
+GK-10490,Chennai,Adyar,Zomato,Zepto,Bicycle,10.8,96,667.76,3747.62,13.026276,80.255171,True,0.84
+GK-10491,Mumbai,Malad,Zepto,Zomato,Bike,6.1,35,741.52,4772.7,19.145732,72.852903,True,0.725
+GK-10492,Delhi,Karol Bagh,Swiggy,Zepto,Bike,9.2,116,642.19,3218.96,28.668115,77.295401,False,0.551
+GK-10493,Mumbai,Bandra,Swiggy,,Scooter,9.5,82,763.07,4312.13,19.023156,72.91729,False,0.957
+GK-10494,Chennai,Mylapore,Swiggy,Zomato,Bike,8.1,80,951.62,5668.36,12.852716,80.238418,False,0.807
+GK-10495,Chennai,Tambaram,Zepto,,Bicycle,7.9,115,626.13,3954.77,13.064216,80.163709,True,0.6
+GK-10496,Chennai,Mylapore,Zepto,Swiggy,Scooter,11.9,60,595.21,3630.25,12.924268,80.159379,False,0.729
+GK-10497,Chennai,Sholinganallur,Swiggy,Zomato,Bike,10.9,68,569.42,3563.28,13.051862,80.162172,False,0.976
+GK-10498,Delhi,Saket,Zepto,,Scooter,12.4,77,489.94,2832.92,28.654196,77.248576,False,0.869
+GK-10499,Mumbai,Goregaon,Swiggy,Zepto,Bike,6.5,88,731.02,4245.4,19.092778,72.9397,False,0.792

@@ -82,11 +82,23 @@ class BoostScreen extends StatelessWidget {
           const SizedBox(height: 16),
           _scoreBreakdownBar('Demand', MockData.demandScore, AppColors.accent),
           const SizedBox(height: 8),
-          _scoreBreakdownBar('Weather Safety', MockData.weatherSafety, AppColors.success),
+          _scoreBreakdownBar(
+            'Weather Safety',
+            MockData.weatherSafety,
+            AppColors.success,
+          ),
           const SizedBox(height: 8),
-          _scoreBreakdownBar('Coverage Bonus', MockData.coverageBonus, AppColors.primary),
+          _scoreBreakdownBar(
+            'Coverage Bonus',
+            MockData.coverageBonus,
+            AppColors.primary,
+          ),
           const SizedBox(height: 8),
-          _scoreBreakdownBar('Historical', MockData.historicalStability, AppColors.warning),
+          _scoreBreakdownBar(
+            'Historical',
+            MockData.historicalStability,
+            AppColors.warning,
+          ),
         ],
       ),
     );
@@ -97,8 +109,8 @@ class BoostScreen extends StatelessWidget {
     final color = score >= 65
         ? AppColors.success
         : score >= 35
-            ? AppColors.warning
-            : AppColors.danger;
+        ? AppColors.warning
+        : AppColors.danger;
 
     return SizedBox(
       width: 70,
@@ -137,7 +149,10 @@ class BoostScreen extends StatelessWidget {
           width: 100,
           child: Text(
             label,
-            style: const TextStyle(fontSize: 12, color: AppColors.textSecondary),
+            style: const TextStyle(
+              fontSize: 12,
+              color: AppColors.textSecondary,
+            ),
           ),
         ),
         Expanded(
@@ -175,8 +190,8 @@ class BoostScreen extends StatelessWidget {
         final color = score >= 85
             ? AppColors.success
             : score >= 70
-                ? AppColors.accent
-                : AppColors.warning;
+            ? AppColors.accent
+            : AppColors.warning;
 
         return Padding(
           padding: const EdgeInsets.only(bottom: 10),
@@ -218,13 +233,19 @@ class BoostScreen extends StatelessWidget {
                       const SizedBox(height: 2),
                       Text(
                         'Peak: ${zone['peakTime']} - ${zone['distance']}',
-                        style: const TextStyle(fontSize: 11, color: AppColors.textSecondary),
+                        style: const TextStyle(
+                          fontSize: 11,
+                          color: AppColors.textSecondary,
+                        ),
                       ),
                     ],
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: AppColors.success.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(20),
@@ -248,9 +269,24 @@ class BoostScreen extends StatelessWidget {
 
   Widget _buildSegmentDemand() {
     final segments = [
-      {'name': 'Food Delivery', 'demand': 0.75, 'color': AppColors.primary, 'label': 'High'},
-      {'name': 'Grocery', 'demand': 0.92, 'color': AppColors.success, 'label': 'Very High'},
-      {'name': 'Hyperlocal', 'demand': 0.45, 'color': AppColors.warning, 'label': 'Medium'},
+      {
+        'name': 'Food Delivery',
+        'demand': 0.75,
+        'color': AppColors.primary,
+        'label': 'High',
+      },
+      {
+        'name': 'Grocery',
+        'demand': 0.92,
+        'color': AppColors.success,
+        'label': 'Very High',
+      },
+      {
+        'name': 'Hyperlocal',
+        'demand': 0.45,
+        'color': AppColors.warning,
+        'label': 'Medium',
+      },
     ];
 
     return GlassCard(
@@ -266,9 +302,15 @@ class BoostScreen extends StatelessWidget {
                   children: [
                     Text(
                       seg['name'] as String,
-                      style: const TextStyle(fontSize: 13, color: AppColors.textPrimary),
+                      style: const TextStyle(
+                        fontSize: 13,
+                        color: AppColors.textPrimary,
+                      ),
                     ),
-                    StatusChip(label: seg['label'] as String, color: seg['color'] as Color),
+                    StatusChip(
+                      label: seg['label'] as String,
+                      color: seg['color'] as Color,
+                    ),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -278,7 +320,9 @@ class BoostScreen extends StatelessWidget {
                     value: seg['demand'] as double,
                     minHeight: 8,
                     backgroundColor: AppColors.bgSurface,
-                    valueColor: AlwaysStoppedAnimation<Color>(seg['color'] as Color),
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      seg['color'] as Color,
+                    ),
                   ),
                 ),
               ],
@@ -297,8 +341,8 @@ class BoostScreen extends StatelessWidget {
           final color = risk >= 60
               ? AppColors.danger
               : risk >= 40
-                  ? AppColors.warning
-                  : AppColors.success;
+              ? AppColors.warning
+              : AppColors.success;
 
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 8),
@@ -308,7 +352,11 @@ class BoostScreen extends StatelessWidget {
                   width: 36,
                   child: Text(
                     day['day'] as String,
-                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: AppColors.textPrimary),
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.textPrimary,
+                    ),
                   ),
                 ),
                 Expanded(
@@ -328,7 +376,10 @@ class BoostScreen extends StatelessWidget {
                   child: Text(
                     day['rain'] as String,
                     textAlign: TextAlign.right,
-                    style: const TextStyle(fontSize: 11, color: AppColors.textSecondary),
+                    style: const TextStyle(
+                      fontSize: 11,
+                      color: AppColors.textSecondary,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -339,8 +390,8 @@ class BoostScreen extends StatelessWidget {
                     color: (day['demand'] as String) == 'High'
                         ? AppColors.success
                         : (day['demand'] as String) == 'Medium'
-                            ? AppColors.warning
-                            : AppColors.danger,
+                        ? AppColors.warning
+                        : AppColors.danger,
                   ),
                 ),
               ],

@@ -1,0 +1,71 @@
+﻿python : Traceback 
+(most recent call 
+last):
+At line:1 char:1
++ python -c "import 
+sys; sys.path.insert(0,
+'.'); from 
+ai.training.train ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Traceback (mo   
+ st recent call las    
+t)::String) [], Re    
+moteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+  File "<string>", 
+line 1, in <module>
+  File "E:\Projects\gui
+dewire\backend\ai\train
+ing\train_forecast_mode
+l.py", line 31, in 
+train
+    _, weather_df, _, 
+_, _ = generate_all_dat
+a(data_dir)
+                       
+      ^^^^^^^^^^^^^^^^^
+^^^^^^^^^^
+  File "E:\Projects\gui
+dewire\backend\ai\train
+ing\..\pipelines\data_p
+ipeline.py", line 327, 
+in generate_all_data
+    workers_df = genera
+te_worker_data(500)
+                 ^^^^^^
+^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\gui
+dewire\backend\ai\train
+ing\..\pipelines\data_p
+ipeline.py", line 66, 
+in generate_worker_data
+    
+'secondary_platform': 
+random.choice([p for p 
+in platforms if p != wo
+rker.get('primary_platf
+orm', 'Swiggy')] + 
+[None]),
+                       
+                       
+                       
+ ^^^^^^
+UnboundLocalError: 
+cannot access local 
+variable 'worker' 
+where it is not 
+associated with a value
+============================================================
+  GigKavach ù Risk Forecast Model Training
+============================================================
+
+[1/4] Generating synthetic data...
+Generating worker data...

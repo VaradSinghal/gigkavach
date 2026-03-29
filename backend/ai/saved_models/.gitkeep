@@ -1,2 +1,0 @@
-# This directory stores trained model files (.pkl, .joblib)
-# Do NOT commit large model files — add to .gitignore
