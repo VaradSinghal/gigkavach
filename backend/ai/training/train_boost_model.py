@@ -33,9 +33,9 @@ TARGET_COL = 'target_earnings'
 
 def train():
     """Train the earnings boost prediction model."""
-    print("=" * 60)
-    print("  GigKavach — Earnings Boost Model Training")
-    print("=" * 60)
+    print("-" * 60)
+    print("  GigKavach - Earnings Boost Model Training")
+    print("-" * 60)
 
     data_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
     if not os.path.exists(os.path.join(data_dir, 'earnings.csv')):
@@ -73,11 +73,11 @@ def train():
     mae = mean_absolute_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    print(f"\n  ── Model Performance ──")
-    print(f"  MAE:  ₹{mae:.2f}")
-    print(f"  R²:   {r2:.4f}")
+    print(f"\n  -- Model Performance --")
+    print(f"  MAE:  RS.{mae:.2f}")
+    print(f"  R2:   {r2:.4f}")
 
-    print(f"\n  ── Feature Importance ──")
+    print(f"\n  -- Feature Importance --")
     importance = pd.Series(model.feature_importances_, index=BOOST_FEATURES).sort_values(ascending=False)
     for feat, imp in importance.items():
         print(f"  {feat:25s} {imp:.4f}")
@@ -90,10 +90,10 @@ def train():
     joblib.dump(scaler, os.path.join(model_dir, 'boost_scaler.joblib'))
     joblib.dump(BOOST_FEATURES, os.path.join(model_dir, 'boost_features.joblib'))
 
-    print(f"  ✓ Saved to: {model_dir}")
-    print(f"\n{'=' * 60}")
-    print(f"  Earnings Boost Model — Training Complete!")
-    print(f"{'=' * 60}")
+    print(f"  [SUCCESS] Saved to: {model_dir}")
+    print(f"\n{'-' * 60}")
+    print(f"  Earnings Boost Model - Training Complete!")
+    print(f"{'-' * 60}")
 
     return model, scaler
 

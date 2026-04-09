@@ -32,7 +32,7 @@ class SupabaseConnection:
         key = os.environ.get("SUPABASE_KEY")
 
         if not url or not key or url == "YOUR_SUPABASE_PROJECT_URL":
-            print("⚠ SUPABASE_URL or SUPABASE_KEY not configured in backend/.env")
+            print("! SUPABASE_URL or SUPABASE_KEY not configured in backend/.env")
             print("  Running in LOCAL MOCK mode (No remote sync).")
             self.client = None
             return
@@ -40,9 +40,9 @@ class SupabaseConnection:
         if create_client:
             try:
                 self.client = create_client(url, key)
-                print("✓ Connected to Supabase backend.")
+                print("[OK] Connected to Supabase backend.")
             except Exception as e:
-                print(f"⚠ Failed to connect to Supabase: {e}")
+                print(f"! Failed to connect to Supabase: {e}")
                 self.client = None
 
 

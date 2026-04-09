@@ -24,63 +24,61 @@ const flagsData = [
 
 const Dashboard = () => {
   const [showSim, setShowSim] = useState(false);
+  const [predictions, setPredictions] = useState([]);
   const [stats, setStats] = useState({
     activePolicies: 0,
     premiumPool: 0,
     claimsProcessing: 0,
     fraudFlags: 0,
-    revenueData: [
-      { day: 'Mon', premium: 0, payouts: 0 },
-      { day: 'Tue', premium: 0, payouts: 0 },
-      { day: 'Wed', premium: 0, payouts: 0 },
-      { day: 'Thu', premium: 0, payouts: 0 },
-      { day: 'Fri', premium: 0, payouts: 0 },
-      { day: 'Sat', premium: 0, payouts: 0 },
-      { day: 'Sun', premium: 0, payouts: 0 },
-    ],
+    lossRatio: 0,
+    revenueData: [],
     flagsData: []
   });
 
   useEffect(() => {
     const fetchData = async () => {
-      // 1. Fetch Active Policies Count
-      const { count: policyCount } = await supabase
+      // 1. Fetch Active Policies Count & Premium Pool
+      const { data: polData, count: policyCount } = await supabase
         .from('policies')
-        .select('*', { count: 'exact', head: true })
+        .select('weekly_premium', { count: 'exact' })
         .eq('status', 'active');
+      
+      const totalPool = polData?.reduce((acc, curr) => acc + Number(curr.weekly_premium), 0) || 0;
 
-      // 2. Fetch Premium Pool Sum
-      const { data: poolData } = await supabase
-        .from('policies')
-        .select('weekly_premium')
-        .eq('status', 'active');
-      const totalPool = poolData?.reduce((acc, curr) => acc + Number(curr.weekly_premium), 0) || 0;
-
-      // 3. Fetch Claims count
-      const { count: claimsCount } = await supabase
+      // 2. Fetch Claims & Total Payouts
+      const { data: claimsData, count: claimsCount } = await supabase
         .from('claims')
-        .select('*', { count: 'exact', head: true });
+        .select('payout_amount, confidence_score, status, created_at');
 
-      // 4. Fetch Fraud Flags (Confidence < 40)
-      const { count: fraudCount, data: flags } = await supabase
-        .from('claims')
-        .select('*', { count: 'exact' })
-        .lt('confidence_score', 40)
-        .limit(4);
+      const totalPayouts = claimsData?.reduce((acc, curr) => acc + Number(curr.payout_amount || 0), 0) || 0;
+      const lossRatio = totalPool > 0 ? (totalPayouts / totalPool) : 0;
+
+      // 3. Fetch Fraud Flags (Confidence < 50)
+      const fraudFlags = claimsData?.filter(c => c.confidence_score < 50) || [];
+
+      // 4. Fetch Predictions from Backend
+      try {
+        const res = await fetch('http://localhost:8000/api/v1/dashboard/predictions');
+        const predData = await res.json();
+        setPredictions(predData.data);
+      } catch (err) {
+        console.error("Failed to fetch predictions:", err);
+      }
 
       setStats(prev => ({
         ...prev,
         activePolicies: policyCount || 0,
         premiumPool: totalPool,
         claimsProcessing: claimsCount || 0,
-        fraudFlags: fraudCount || 0,
-        flagsData: flags?.map(f => ({
+        fraudFlags: fraudFlags.length,
+        lossRatio: lossRatio,
+        flagsData: fraudFlags.slice(0, 4).map(f => ({
           id: f.claim_id,
           worker: f.worker_id,
-          type: f.trigger_label,
+          type: f.trigger_label || 'Anomaly',
           status: f.status === 'soft_review' ? 'Review' : 'High Risk',
           score: f.confidence_score
-        })) || []
+        }))
       }));
     };
 
@@ -118,35 +116,38 @@ const Dashboard = () => {
       <div className="grid-cols-4">
         <div className="glass-card stat-card">
           <div className="stat-header">
-            <span className="stat-title">Active Policies</span>
+            <span className="stat-title">Active Risk</span>
             <div className="stat-icon" style={{ background: 'var(--bg-surface)', color: 'var(--primary)' }}>
               <Shield size={20} />
             </div>
           </div>
-          <div className="stat-value">{stats.activePolicies.toLocaleString()}</div>
+          <div className="stat-value">{stats.activePolicies.toLocaleString()} pts</div>
           <div className="stat-trend trend-up"><TrendingUp size={14} /> Live tracking</div>
         </div>
         
         <div className="glass-card stat-card">
           <div className="stat-header">
-            <span className="stat-title">Premium Pool</span>
-            <div className="stat-icon" style={{ background: 'var(--bg-card-light)', color: 'var(--success)' }}>
-              <Banknote size={20} />
+            <span className="stat-title">Loss Ratio</span>
+            <div className="stat-icon" style={{ background: 'var(--bg-card-light)', color: stats.lossRatio > 0.6 ? 'var(--danger)' : 'var(--success)' }}>
+              <Activity size={20} />
             </div>
           </div>
-          <div className="stat-value">₹{(stats.premiumPool / 1000).toFixed(1)}k</div>
-          <div className="stat-trend trend-up"><TrendingUp size={14} /> Total active risk</div>
+          <div className="stat-value">{(stats.lossRatio * 100).toFixed(1)}%</div>
+          <div className="stat-trend" style={{ color: stats.lossRatio > 0.6 ? 'var(--danger)' : 'var(--success)' }}>
+            {stats.lossRatio > 0.6 ? <AlertTriangle size={14} /> : <TrendingUp size={14} />} 
+            {stats.lossRatio > 0.6 ? ' Above threshold' : ' Healthy pool'}
+          </div>
         </div>
 
         <div className="glass-card stat-card">
           <div className="stat-header">
             <span className="stat-title">Claims Processing</span>
             <div className="stat-icon" style={{ background: 'var(--bg-surface)', color: 'var(--primary)' }}>
-              <Activity size={20} />
+              <TrendingUp size={20} />
             </div>
           </div>
-          <div className="stat-value">{stats.claimsProcessing} events</div>
-          <div className="stat-trend trend-up" style={{ color: 'var(--success)' }}><TrendingUp size={14} /> Parametric triggers</div>
+          <div className="stat-value">{stats.claimsProcessing}</div>
+          <div className="stat-trend trend-up" style={{ color: 'var(--success)' }}><TrendingUp size={14} /> AI Verified</div>
         </div>
 
         <div className="glass-card stat-card">
@@ -157,36 +158,35 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="stat-value">{stats.fraudFlags}</div>
-          <div className="stat-trend trend-down"><TrendingUp size={14} /> ML Anomaly detect</div>
+          <div className="stat-trend trend-down"><TrendingUp size={14} /> Anomaly Scan</div>
         </div>
       </div>
 
       <div className="grid-cols-2">
         <div className="glass-card">
-          <div className="card-title">Liquidity vs Payouts (7 Days)</div>
+          <div className="card-title">AI Claims Forecast (Next 7 Days)</div>
           <div style={{ height: '300px' }}>
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={revenueData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+              <AreaChart data={predictions.length > 0 ? predictions : revenueData} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
                 <defs>
-                  <linearGradient id="colorPremium" x1="0" y1="0" x2="0" y2="1">
+                  <linearGradient id="colorHist" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="var(--text-muted)" stopOpacity={0.1}/>
+                    <stop offset="95%" stopColor="var(--text-muted)" stopOpacity={0}/>
+                  </linearGradient>
+                  <linearGradient id="colorPred" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="var(--primary)" stopOpacity={0.3}/>
                     <stop offset="95%" stopColor="var(--primary)" stopOpacity={0}/>
                   </linearGradient>
-                  <linearGradient id="colorPayout" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="var(--danger)" stopOpacity={0.3}/>
-                    <stop offset="95%" stopColor="var(--danger)" stopOpacity={0}/>
-                  </linearGradient>
                 </defs>
                 <XAxis dataKey="day" stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} />
-                <YAxis stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} tickFormatter={(value) => `₹${value/1000}k`} />
+                <YAxis stroke="var(--text-muted)" fontSize={12} tickLine={false} axisLine={false} />
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border-subtle)" vertical={false} />
                 <Tooltip 
                   contentStyle={{ backgroundColor: 'var(--bg-card)', borderColor: 'var(--border-subtle)', borderRadius: '8px', color: 'var(--text-primary)' }}
-                  itemStyle={{ color: 'var(--text-primary)' }}
                 />
                 <Legend iconType="circle" />
-                <Area type="monotone" name="Collected Premiums" dataKey="premium" stroke="var(--primary)" strokeWidth={3} fillOpacity={1} fill="url(#colorPremium)" />
-                <Area type="monotone" name="Claim Payouts" dataKey="payouts" stroke="var(--danger)" strokeWidth={3} fillOpacity={1} fill="url(#colorPayout)" />
+                <Area type="monotone" name="Historical Avg" dataKey="historical" stroke="var(--text-muted)" strokeDasharray="5 5" fillOpacity={1} fill="url(#colorHist)" />
+                <Area type="monotone" name="AI Predicted" dataKey="predicted" stroke="var(--primary)" strokeWidth={3} fillOpacity={1} fill="url(#colorPred)" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -203,7 +203,7 @@ const Dashboard = () => {
               <tr>
                 <th>Claim ID</th>
                 <th>Worker</th>
-                <th>Flag Type</th>
+                <th>Anomaly</th>
                 <th>Score</th>
               </tr>
             </thead>
@@ -214,7 +214,7 @@ const Dashboard = () => {
                   <td>{flag.worker}</td>
                   <td>{flag.type}</td>
                   <td>
-                    <span className={`status-chip ${flag.status === 'Critical' ? 'status-danger' : flag.score < 20 ? 'status-danger' : 'status-warning'}`}>
+                    <span className={`status-chip ${flag.score < 20 ? 'status-danger' : 'status-warning'}`}>
                       {flag.score}/100
                     </span>
                   </td>

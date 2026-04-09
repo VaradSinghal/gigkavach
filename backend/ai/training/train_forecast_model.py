@@ -123,15 +123,15 @@ def train():
         json.dump(zone_results, f, indent=2)
 
     # Print sample forecast
-    print(f"\n  ── Sample 7-Day Forecast (Chennai, Adyar) ──")
+    print(f"\n  -- Sample 7-Day Forecast (Chennai, Adyar) --")
     sample = zone_results.get('Chennai_Adyar', list(zone_results.values())[0])
     for day in sample['forecast']:
-        bar = '█' * int(day['predicted_risk'] / 5)
+        bar = '=' * int(day['predicted_risk'] / 5)
         print(f"  {day['date']} ({day['day_of_week']})  {day['predicted_risk']:5.1f}  {bar}  [{day['risk_label']}]")
 
-    print(f"\n  ✓ Forecast generated for {len(zone_results)} zones")
+    print(f"\n  * Forecast generated for {len(zone_results)} zones")
     print(f"\n{'=' * 60}")
-    print(f"  Risk Forecast Model — Training Complete!")
+    print(f"  Risk Forecast Model - Training Complete!")
     print(f"{'=' * 60}")
 
     return models, zone_results

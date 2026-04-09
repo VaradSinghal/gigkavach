@@ -13,9 +13,12 @@ import asyncio
 from insurance.services.parametric_engine import ParametricEngine
 from insurance.services.claim_processor import ClaimProcessor
 from insurance.services.premium_calculator import PremiumCalculator
+from worker_os.routes import dashboard, simulation
 from supabase_client import db
 
 app = FastAPI(title="GigKavach Mock External APIs")
+app.include_router(dashboard.router)
+app.include_router(simulation.router)
 
 # Keep singletons
 engine = ParametricEngine()
@@ -142,7 +145,7 @@ def run_parametric_engine(city: str = "Chennai", zone: str = "Adyar", limit: int
     if not db.client:
         raise HTTPException(status_code=500, detail="Supabase not configured.")
         
-    print(f"🚀 Running Parametric Engine for {zone}, {city}...")
+    print(f"--- Running Parametric Engine for {zone}, {city}...")
     
     # 1. Evaluate triggers and sync to DB
     status = engine.get_trigger_status(zone, city)
@@ -152,7 +155,7 @@ def run_parametric_engine(city: str = "Chennai", zone: str = "Adyar", limit: int
     claims_generated = []
     
     if len(active_triggers) > 0:
-        print(f"⚠ Detected {len(active_triggers)} active triggers! Processing claims...")
+        print(f"! Detected {len(active_triggers)} active triggers! Processing claims...")
         
         # Fetch bounded number of workers in that zone to simulate payout
         res = db.client.table('workers').select('*').eq('city', city).eq('zone', zone).limit(limit).execute()

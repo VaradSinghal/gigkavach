@@ -78,12 +78,12 @@ def train():
     mae = mean_absolute_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
 
-    print(f"\n  ── Model Performance ──")
-    print(f"  MAE:  ₹{mae:.2f}")
-    print(f"  R²:   {r2:.4f}")
+    print(f"\n  -- Model Performance --")
+    print(f"  MAE:  RS.{mae:.2f}")
+    print(f"  R2:   {r2:.4f}")
 
     # Feature importance
-    print(f"\n  ── Feature Importance (Top 10) ──")
+    print(f"\n  -- Feature Importance (Top 10) --")
     importance = pd.Series(np.abs(model.coef_), index=FEATURE_COLS).sort_values(ascending=False)
     for feat, imp in importance.head(10).items():
         print(f"  {feat:35s} {imp:.4f}")
@@ -97,9 +97,9 @@ def train():
     joblib.dump(scaler, os.path.join(model_dir, 'premium_scaler.joblib'))
     joblib.dump(FEATURE_COLS, os.path.join(model_dir, 'premium_features.joblib'))
 
-    print(f"  ✓ Saved to: {model_dir}")
+    print(f"  * Saved to: {model_dir}")
     print(f"\n{'=' * 60}")
-    print(f"  Premium Pricing Model — Training Complete!")
+    print(f"  Premium Pricing Model - Training Complete!")
     print(f"{'=' * 60}")
 
     return model, scaler

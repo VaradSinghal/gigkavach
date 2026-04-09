@@ -2,211 +2,211 @@
   {
     "city": "Chennai",
     "zone": "Adyar",
-    "risk_score": 79.7,
+    "risk_score": 84.3,
     "risk_label": "Critical",
-    "cluster": 3
+    "cluster": 0
   },
   {
     "city": "Chennai",
     "zone": "Velachery",
-    "risk_score": 72.4,
-    "risk_label": "Critical",
-    "cluster": 3
+    "risk_score": 48.8,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Chennai",
     "zone": "T. Nagar",
-    "risk_score": 28.0,
-    "risk_label": "Low",
-    "cluster": 1
+    "risk_score": 29.6,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Chennai",
     "zone": "Mylapore",
-    "risk_score": 37.2,
-    "risk_label": "Low",
-    "cluster": 1
+    "risk_score": 43.3,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Chennai",
     "zone": "Anna Nagar",
-    "risk_score": 37.0,
-    "risk_label": "Low",
-    "cluster": 1
+    "risk_score": 17.2,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Chennai",
     "zone": "Guindy",
-    "risk_score": 27.6,
-    "risk_label": "Low",
-    "cluster": 1
+    "risk_score": 22.6,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Chennai",
     "zone": "Porur",
-    "risk_score": 70.1,
+    "risk_score": 70.9,
     "risk_label": "Critical",
-    "cluster": 3
+    "cluster": 0
   },
   {
     "city": "Chennai",
     "zone": "Tambaram",
-    "risk_score": 82.6,
+    "risk_score": 95.0,
     "risk_label": "Critical",
-    "cluster": 3
+    "cluster": 0
   },
   {
     "city": "Chennai",
     "zone": "Sholinganallur",
-    "risk_score": 29.1,
-    "risk_label": "Low",
-    "cluster": 1
+    "risk_score": 19.7,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Chennai",
     "zone": "Chromepet",
-    "risk_score": 23.8,
-    "risk_label": "Low",
-    "cluster": 1
+    "risk_score": 18.9,
+    "risk_label": "Moderate",
+    "cluster": 2
   },
   {
     "city": "Delhi",
     "zone": "Connaught Place",
-    "risk_score": 41.2,
+    "risk_score": 53.2,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Dwarka",
-    "risk_score": 88.0,
+    "risk_score": 67.5,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Rohini",
-    "risk_score": 85.1,
+    "risk_score": 72.8,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Saket",
-    "risk_score": 57.6,
+    "risk_score": 37.5,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Lajpat Nagar",
-    "risk_score": 49.8,
+    "risk_score": 49.7,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Karol Bagh",
-    "risk_score": 46.8,
+    "risk_score": 33.8,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Chandni Chowk",
-    "risk_score": 95.0,
+    "risk_score": 77.9,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Nehru Place",
-    "risk_score": 45.0,
+    "risk_score": 49.9,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Janakpuri",
-    "risk_score": 49.1,
+    "risk_score": 41.1,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Delhi",
     "zone": "Pitampura",
-    "risk_score": 44.3,
+    "risk_score": 44.0,
     "risk_label": "High",
-    "cluster": 0
+    "cluster": 1
   },
   {
     "city": "Mumbai",
     "zone": "Andheri",
-    "risk_score": 63.7,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 44.8,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Bandra",
-    "risk_score": 14.8,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 5.0,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Dadar",
-    "risk_score": 60.2,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 55.2,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Borivali",
-    "risk_score": 14.5,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 13.2,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Kurla",
-    "risk_score": 48.0,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 58.2,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Goregaon",
-    "risk_score": 5.0,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 6.9,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Malad",
-    "risk_score": 53.8,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 45.8,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Powai",
-    "risk_score": 24.0,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 17.4,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Thane",
-    "risk_score": 21.4,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 6.4,
+    "risk_label": "Low",
+    "cluster": 3
   },
   {
     "city": "Mumbai",
     "zone": "Navi Mumbai",
-    "risk_score": 14.7,
-    "risk_label": "Moderate",
-    "cluster": 2
+    "risk_score": 9.7,
+    "risk_label": "Low",
+    "cluster": 3
   }
 ]

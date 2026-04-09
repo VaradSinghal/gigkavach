@@ -88,9 +88,9 @@ def train():
     features_df['risk_label'] = features_df['cluster'].map(cluster_label_map)
 
     # Print results
-    print(f"\n  ── Zone Risk Scores ──")
+    print(f"\n  -- Zone Risk Scores --")
     for _, row in features_df.iterrows():
-        print(f"  {row['city']:10s} {row['zone']:20s} → Score: {row['risk_score']:5.1f}  [{row['risk_label']}]")
+        print(f"  {row['city']:10s} {row['zone']:20s} -> Score: {row['risk_score']:5.1f}  [{row['risk_label']}]")
 
     # Save outputs
     print("\n[4/4] Saving model artifacts...")
@@ -106,9 +106,9 @@ def train():
     with open(os.path.join(model_dir, 'zone_risk_scores.json'), 'w') as f:
         json.dump(scores_export, f, indent=2)
 
-    print(f"  ✓ Saved to: {model_dir}")
+    print(f"  * Saved to: {model_dir}")
     print(f"\n{'=' * 60}")
-    print(f"  Zone Risk Clustering — Training Complete!")
+    print(f"  Zone Risk Clustering - Training Complete!")
     print(f"{'=' * 60}")
 
     return kmeans, scaler, features_df

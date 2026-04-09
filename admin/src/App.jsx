@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Claims from './pages/Claims';
 import RiskMap from './pages/RiskMap';
 import Fraud from './pages/Fraud';
+import SimulationSuite from './pages/SimulationSuite';
 
 const Layout = ({ children }) => {
   return (
@@ -29,6 +30,9 @@ const Layout = ({ children }) => {
           </NavLink>
           <NavLink to="/fraud" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
             <AlertCircle size={20} /> Fraud & Appeals
+          </NavLink>
+          <NavLink to="/simulation" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+            <Zap size={20} /> Simulation Suite
           </NavLink>
 
           <div style={{ margin: '32px 0 16px', fontSize: '11px', textTransform: 'uppercase', color: 'var(--text-muted)', letterSpacing: '1px', fontWeight: 700 }}>Management</div>
@@ -84,6 +88,7 @@ function App() {
           <Route path="/claims" element={<Claims />} />
           <Route path="/risk" element={<RiskMap />} />
           <Route path="/fraud" element={<Fraud />} />
+          <Route path="/simulation" element={<SimulationSuite />} />
         </Routes>
       </Layout>
     </BrowserRouter>
