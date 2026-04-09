@@ -4,6 +4,7 @@ Provides REST endpoints for mock disruption APIs and parametric engine controls.
 """
 
 from fastapi import FastAPI, BackgroundTasks, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import random
 from typing import Optional, List
@@ -17,6 +18,16 @@ from worker_os.routes import dashboard, simulation
 from supabase_client import db
 
 app = FastAPI(title="GigKavach Mock External APIs")
+
+# Enable CORS for frontend integration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # In production, restrict this to specific origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(dashboard.router)
 app.include_router(simulation.router)
 

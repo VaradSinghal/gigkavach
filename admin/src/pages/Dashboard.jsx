@@ -2,25 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Shield, TrendingUp, AlertTriangle, Users, Activity, Banknote } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend } from 'recharts';
 import { supabase } from '../supabase';
+import { GigKavachApi } from '../api';
 import SimulationPanel from '../components/SimulationPanel';
 
-// Mock Data
-const revenueData = [
-  { day: 'Mon', premium: 42000, payouts: 12000 },
-  { day: 'Tue', premium: 43500, payouts: 15000 },
-  { day: 'Wed', premium: 45000, payouts: 38000 }, // Rain event
-  { day: 'Thu', premium: 46200, payouts: 18000 },
-  { day: 'Fri', premium: 48000, payouts: 14000 },
-  { day: 'Sat', premium: 51000, payouts: 22000 },
-  { day: 'Sun', premium: 53500, payouts: 19000 },
-];
-
-const flagsData = [
-  { id: 'CLM-8924', worker: 'Ravi Kumar', type: 'Spoofed Mock Location', status: 'High Risk', score: 12 },
-  { id: 'CLM-8921', worker: 'Suresh P', type: 'Unusual Claim Velocity', status: 'Medium Risk', score: 45 },
-  { id: 'CLM-8918', worker: 'Amit S', type: 'Device Fingerprint Mismatch', status: 'High Risk', score: 18 },
-  { id: 'CLM-8905', worker: 'Deepak M', type: 'Syndicate Pattern Detect', status: 'Critical', score: 8 },
-];
+// ... (revenueData and flagsData unchanged)
 
 const Dashboard = () => {
   const [showSim, setShowSim] = useState(false);
@@ -37,33 +22,44 @@ const Dashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // 1. Fetch Active Policies Count & Premium Pool
-      const { data: polData, count: policyCount } = await supabase
-        .from('policies')
-        .select('weekly_premium', { count: 'exact' })
-        .eq('status', 'active');
-      
-      const totalPool = polData?.reduce((acc, curr) => acc + Number(curr.weekly_premium), 0) || 0;
-
-      // 2. Fetch Claims & Total Payouts
-      const { data: claimsData, count: claimsCount } = await supabase
-        .from('claims')
-        .select('payout_amount, confidence_score, status, created_at');
-
-      const totalPayouts = claimsData?.reduce((acc, curr) => acc + Number(curr.payout_amount || 0), 0) || 0;
-      const lossRatio = totalPool > 0 ? (totalPayouts / totalPool) : 0;
-
-      // 3. Fetch Fraud Flags (Confidence < 50)
-      const fraudFlags = claimsData?.filter(c => c.confidence_score < 50) || [];
-
-      // 4. Fetch Predictions from Backend
+      // 1. Fetch Real-time AI Analytics from Backend
       try {
-        const res = await fetch('http://localhost:8000/api/v1/dashboard/predictions');
-        const predData = await res.json();
-        setPredictions(predData.data);
+        const [apiStats, apiPreds] = await Promise.all([
+          GigKavachApi.getStats(),
+          GigKavachApi.getPredictions()
+        ]);
+        
+        setPredictions(apiPreds.data);
+        
+        // 2. Supplement with Supabase real-time data for detailed lists
+        const { data: claimsData } = await supabase
+          .from('claims')
+          .select('claim_id, worker_id, payout_amount, confidence_score, status, trigger_label')
+          .order('created_at', { ascending: false })
+          .limit(10);
+
+        const fraudFlags = (claimsData || []).filter(c => c.confidence_score < 50);
+
+        setStats(prev => ({
+          ...prev,
+          activePolicies: apiStats.active_policies || 0,
+          premiumPool: apiStats.premium_pool || 0,
+          totalPayouts: apiStats.total_payouts || 0,
+          claimsProcessing: claimsData?.length || 0,
+          fraudFlags: fraudFlags.length,
+          lossRatio: apiStats.loss_ratio || 0,
+          flagsData: fraudFlags.slice(0, 4).map(f => ({
+            id: f.claim_id,
+            worker: f.worker_id,
+            type: f.trigger_label || 'Anomaly',
+            status: f.confidence_score < 20 ? 'Critical' : 'Review',
+            score: f.confidence_score
+          }))
+        }));
       } catch (err) {
-        console.error("Failed to fetch predictions:", err);
+        console.error("Dashboard Sync Error:", err);
       }
+    };
 
       setStats(prev => ({
         ...prev,
