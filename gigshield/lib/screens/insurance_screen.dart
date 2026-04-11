@@ -7,6 +7,7 @@ import '../services/premium_engine.dart';
 import '../widgets/common_widgets.dart';
 import '../widgets/simulation_bottom_sheet.dart';
 import '../widgets/demo_claim_overlay.dart';
+import '../widgets/payment_processing_overlay.dart';
 import 'claim_detail_screen.dart';
 
 class InsuranceScreen extends StatefulWidget {
@@ -64,7 +65,7 @@ class _InsuranceScreenState extends State<InsuranceScreen>
       print('Fallback to mock triggers: $e');
     }
 
-    // Subscribe to realtime updates
+    // Subscribe to realtime updates for triggers
     SupabaseService.client
         .channel('public:active_triggers')
         .onPostgresChanges(
@@ -77,6 +78,35 @@ class _InsuranceScreenState extends State<InsuranceScreen>
                 .select()
                 .order('trigger_id');
             _updateTriggers(data);
+          },
+        )
+        .subscribe();
+
+    // 2. Listen for Auto-Generated Claims (Zero-Touch Demo)
+    SupabaseService.client
+        .channel('public:claims')
+        .onPostgresChanges(
+          event: PostgresChangeEvent.insert,
+          schema: 'public',
+          table: 'claims',
+          filter: PostgresChangeFilter(
+            type: PostgresChangeFilterType.eq,
+            column: 'worker_id',
+            value: MockData.workerId,
+          ),
+          callback: (payload) {
+            final newClaim = payload.newRecord;
+            final amount = (newClaim['payout_amount'] as num).toDouble();
+            final label = newClaim['trigger_label'] ?? 'Parametric Payout';
+            
+            // Auto-trigger the High-Fidelity Mock Payout UI
+            if (mounted) {
+              PaymentProcessingOverlay.show(
+                context, 
+                amount: amount, 
+                description: 'Claim Payout: $label'
+              );
+            }
           },
         )
         .subscribe();

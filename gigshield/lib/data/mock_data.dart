@@ -55,8 +55,8 @@ class MockData {
   static const String policyEndDate = '22 Mar 2026';
   static const String policyTier = 'Standard';
   static const double coveragePercentage = 70.0;
-  static const int totalClaimsPaid = 3;
-  static const double totalPayoutsReceived = 1330.0;
+  static int totalClaimsPaid = 3;
+  static double totalPayoutsReceived = 1330.0;
 
   // Premium Breakdown (Phase 2 — Dynamic)
   static const double basePremium = 25.0;
@@ -325,10 +325,10 @@ class MockData {
   ];
 
   // ─── Wallet ─────────────────────────────────────────────────────
-  static const double walletBalance = 385.0;
-  static const double autoDeductionPerDay = 10.0;
+  static double walletBalance = 385.0;
+  static double autoDeductionPerDay = 10.0;
 
-  static const List<Map<String, dynamic>> walletTransactions = [
+  static List<Map<String, dynamic>> walletTransactions = [
     {
       'date': 'Today',
       'desc': 'Auto-save from earnings',
@@ -372,6 +372,20 @@ class MockData {
       'type': 'debit',
     },
   ];
+
+  static void addTransaction({
+    required double amount,
+    required String desc,
+    required String type,
+  }) {
+    walletTransactions.insert(0, {
+      'date': 'Just Now',
+      'desc': desc,
+      'amount': amount,
+      'type': type,
+    });
+    walletBalance += amount;
+  }
 
   // ─── Stability Score ────────────────────────────────────────────
   static const int stabilityScore = 62;

@@ -3,6 +3,8 @@ import 'dart:ui';
 import '../theme/app_theme.dart';
 import '../services/claim_manager.dart';
 
+import '../widgets/payment_processing_overlay.dart';
+
 class DemoClaimOverlay extends StatefulWidget {
   final Map<String, dynamic> mockParams;
 
@@ -259,13 +261,25 @@ class _DemoClaimOverlayState extends State<DemoClaimOverlay> with TickerProvider
           width: double.infinity,
           height: 50,
           child: ElevatedButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              Navigator.pop(context);
+              if (_finalClaim != null) {
+                PaymentProcessingOverlay.show(
+                  context,
+                  amount: _finalClaim!.payoutAmount,
+                  description: 'Manual Simulation: ${_finalClaim!.label}',
+                );
+              }
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.onboardBluePrimary,
               elevation: 0,
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             ),
-            child: const Text('Back to Dashboard', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white)),
+            child: Text(
+              _finalClaim != null ? 'PROCESS Payout' : 'Back to Dashboard', 
+              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, color: Colors.white)
+            ),
           ),
         ),
       ],
