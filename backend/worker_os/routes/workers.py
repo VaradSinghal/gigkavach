@@ -9,7 +9,7 @@ from datetime import datetime
 from pydantic import BaseModel
 import random
 
-from config import db
+from supabase_client import db
 
 router = APIRouter(prefix="/api/v1/workers", tags=["Workers"])
 
