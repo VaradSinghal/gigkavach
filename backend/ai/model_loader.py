@@ -47,7 +47,7 @@ class ModelLoader:
         if os.path.exists(fraud_path):
             self.fraud_model.load_state_dict(torch.load(fraud_path, map_location=torch.device('cpu')))
             self.fraud_model.eval()
-            print("  ✓ Loaded Fine-tuned Fraud Model (PyTorch)")
+            print("  [OK] Loaded Fine-tuned Fraud Model (PyTorch)")
         else:
             self.fraud_model = None
 
@@ -58,7 +58,7 @@ class ModelLoader:
         if os.path.exists(premium_path):
             self.premium_model.load_state_dict(torch.load(premium_path, map_location=torch.device('cpu')))
             self.premium_model.eval()
-            print("  ✓ Loaded Fine-tuned Premium Model (PyTorch)")
+            print("  [OK] Loaded Fine-tuned Premium Model (PyTorch)")
         else:
             self.premium_model = None
 

@@ -8,7 +8,7 @@ class NotificationEngine:
     """Manages real-time alerts for the platform."""
     
     def __init__(self):
-        pass
+        self.active_notifications = []
 
     def emit_risk_alert(self, worker_id: str, zone: str, hazard_type: str, severity: str):
         """Sends a notification directly related to geometric risk."""
@@ -35,9 +35,22 @@ class NotificationEngine:
     def _broadcast(self, payload: dict):
         """
         In production, this interfaces directly with Supabase Realtime Broadcast or Firebase Cloud Messaging.
-        For localized OS, it dumps to API logger trace. 
+        For localized OS, it buffers to an in-memory queue that clients can poll.
         """
+        import uuid
+        payload['id'] = str(uuid.uuid4())
+        self.active_notifications.append(payload)
+        # Keep the latest 50 notifications in memory
+        if len(self.active_notifications) > 50:
+            self.active_notifications.pop(0)
+
         print(f"\n[BROADCAST NOTIFICATION] To {payload['worker_id']}: {payload['title']} - {payload['message']}\n")
+
+    def get_latest(self):
+        return self.active_notifications
+        
+    def clear(self):
+        self.active_notifications = []
 
 # Global singleton
 notifier = NotificationEngine()

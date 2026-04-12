@@ -9,8 +9,10 @@ import 'screens/wallet_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/registration_screen.dart';
 import 'screens/splash_screen.dart';
+import 'dart:async';
 import 'data/mock_data.dart';
 import 'services/supabase_service.dart';
+import 'services/api_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -69,6 +71,53 @@ class MainNavigationShell extends StatefulWidget {
 
 class _MainNavigationShellState extends State<MainNavigationShell> {
   int _selectedIndex = 0;
+  Timer? _pollingTimer;
+  final Set<String> _seenNotificationIds = {};
+
+  @override
+  void initState() {
+    super.initState();
+    _startNotificationPolling();
+  }
+
+  void _startNotificationPolling() {
+    _pollingTimer = Timer.periodic(const Duration(seconds: 3), (_) async {
+      final notifications = await GigKavachApiService.getNotifications();
+      if (!mounted) return;
+      for (final notif in notifications) {
+        final String id = notif['id'];
+        if (!_seenNotificationIds.contains(id)) {
+          _seenNotificationIds.add(id);
+          _showNotificationSnackbar(notif);
+        }
+      }
+    });
+  }
+
+  void _showNotificationSnackbar(dynamic notif) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(notif['title'] ?? '', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+            const SizedBox(height: 4),
+            Text(notif['message'] ?? '', style: const TextStyle(fontSize: 12)),
+          ],
+        ),
+        backgroundColor: notif['type'] == 'geo_risk' ? AppColors.danger : AppColors.success,
+        duration: const Duration(seconds: 5),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _pollingTimer?.cancel();
+    super.dispose();
+  }
 
   final List<Widget> _screens = const [
     DashboardScreen(),

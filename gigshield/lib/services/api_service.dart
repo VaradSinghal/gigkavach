@@ -71,4 +71,17 @@ class GigKavachApiService {
     }
     return {'protected_earnings': 0, 'active_coverage': false};
   }
+
+  /// Polls the universal notification buffer for real-time mobile autonomous syncs.
+  static Future<List<dynamic>> getNotifications() async {
+    try {
+      final response = await http.get(Uri.parse('$baseUrl/api/v1/notifications'));
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body)['notifications'] ?? [];
+      }
+    } catch (e) {
+      // Fail silently to avoid interrupting UX
+    }
+    return [];
+  }
 }

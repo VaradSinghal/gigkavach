@@ -12,6 +12,42 @@ import Workers from './pages/Workers';
 const SentinelLayout = ({ children }) => {
   const location = useLocation();
   const isLanding = location.pathname === '/';
+  
+  const [notifications, setNotifications] = React.useState([]);
+  const [toasts, setToasts] = React.useState([]);
+  const seenIds = React.useRef(new Set());
+
+  React.useEffect(() => {
+    if (isLanding) return;
+    
+    let interval;
+    const fetchNotifications = async () => {
+      try {
+        const res = await fetch('http://127.0.0.1:8000/api/v1/notifications');
+        const data = await res.json();
+        
+        data.notifications.forEach(notif => {
+          if (!seenIds.current.has(notif.id)) {
+            seenIds.current.add(notif.id);
+            // Push new toast
+            const toastId = Date.now() + Math.random();
+            setToasts(prev => [...prev, { ...notif, t_id: toastId }]);
+            
+            // Auto remove toast after 5 seconds
+            setTimeout(() => {
+              setToasts(prev => prev.filter(t => t.t_id !== toastId));
+            }, 5000);
+          }
+        });
+        setNotifications(data.notifications);
+      } catch (err) {
+        // Silently fail if backend offline
+      }
+    };
+    
+    interval = setInterval(fetchNotifications, 3000);
+    return () => clearInterval(interval);
+  }, [isLanding]);
 
   if (isLanding) return <>{children}</>;
 
@@ -90,6 +126,22 @@ const SentinelLayout = ({ children }) => {
           {children}
         </div>
       </main>
+
+      {/* Global Toast Container */}
+      <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 9999, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+        {toasts.map(toast => (
+          <div key={toast.t_id} className="glass-card dark" style={{ width: '350px', padding: '16px', display: 'flex', gap: '16px', animation: 'slideInRight 0.3s ease-out' }}>
+             <div style={{ padding: '8px', borderRadius: '8px', background: toast.type === 'geo_risk' ? 'rgba(255,100,100,0.1)' : 'rgba(9,133,81,0.1)', color: toast.type === 'geo_risk' ? 'var(--danger)' : 'var(--success)' }}>
+               {toast.type === 'geo_risk' ? <AlertCircle size={24} /> : <Zap size={24} />}
+             </div>
+             <div style={{ flex: 1 }}>
+                <div style={{ fontWeight: 600, fontSize: '14px', marginBottom: '4px', color: '#fff' }}>{toast.title}</div>
+                <div style={{ fontSize: '12px', color: 'var(--text-muted-dark)', lineHeight: 1.4 }}>{toast.message}</div>
+             </div>
+          </div>
+        ))}
+      </div>
+      
     </div>
   );
 };

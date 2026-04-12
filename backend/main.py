@@ -43,6 +43,16 @@ engine = ParametricEngine()
 processor = ClaimProcessor()
 premium_calc = PremiumCalculator()
 
+@app.get("/api/v1/notifications")
+def get_notifications():
+    """Polled by GigShield mobile app and Sentinel Admin to receive real-time autonomous syncs."""
+    return {"notifications": notifier.get_latest()}
+
+@app.delete("/api/v1/notifications")
+def clear_notifications():
+    notifier.clear()
+    return {"status": "cleared"}
+
 # Simulation State
 class SimulationState:
     weather_override = None
