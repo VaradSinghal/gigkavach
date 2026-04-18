@@ -9,6 +9,8 @@ import '../widgets/simulation_bottom_sheet.dart';
 import '../widgets/demo_claim_overlay.dart';
 import '../widgets/payment_processing_overlay.dart';
 import 'claim_detail_screen.dart';
+import '../services/notification_service.dart';
+import '../models/notification_model.dart';
 
 class InsuranceScreen extends StatefulWidget {
   const InsuranceScreen({super.key});
@@ -98,6 +100,15 @@ class _InsuranceScreenState extends State<InsuranceScreen>
             final newClaim = payload.newRecord;
             final amount = (newClaim['payout_amount'] as num).toDouble();
             final label = newClaim['trigger_label'] ?? 'Parametric Payout';
+            final claimId = newClaim['claim_id'] ?? 'CLM-${DateTime.now().millisecondsSinceEpoch}';
+
+            // Save to Notifications
+            NotificationService().addNotification(
+              id: claimId,
+              title: '💸 Payout Processed',
+              message: 'Claim $claimId processed. ₹$amount credited to wallet.',
+              type: NotificationType.payout,
+            );
             
             // Auto-trigger the High-Fidelity Mock Payout UI
             if (mounted) {

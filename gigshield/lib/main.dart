@@ -11,6 +11,8 @@ import 'screens/registration_screen.dart';
 import 'screens/splash_screen.dart';
 import 'dart:async';
 import 'data/mock_data.dart';
+import 'services/notification_service.dart';
+import 'models/notification_model.dart';
 import 'services/supabase_service.dart';
 import 'services/api_service.dart';
 
@@ -19,6 +21,9 @@ void main() async {
 
   // Initialize Supabase backend connection
   await SupabaseService.initialize();
+
+  // Initialize Notification Service
+  NotificationService();
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
@@ -72,7 +77,6 @@ class MainNavigationShell extends StatefulWidget {
 class _MainNavigationShellState extends State<MainNavigationShell> {
   int _selectedIndex = 0;
   Timer? _pollingTimer;
-  final Set<String> _seenNotificationIds = {};
 
   @override
   void initState() {
@@ -86,8 +90,25 @@ class _MainNavigationShellState extends State<MainNavigationShell> {
       if (!mounted) return;
       for (final notif in notifications) {
         final String id = notif['id'];
-        if (!_seenNotificationIds.contains(id)) {
-          _seenNotificationIds.add(id);
+        
+        // Add to global service
+        final typeStr = notif['type'] as String? ?? 'info';
+        final type = typeStr == 'geo_risk' 
+            ? NotificationType.risk 
+            : typeStr == 'claim_update' 
+                ? NotificationType.payout 
+                : NotificationType.info;
+
+        final service = NotificationService();
+        final isNew = !service.notifications.any((n) => n.id == id);
+        
+        if (isNew) {
+          service.addNotification(
+            id: id,
+            title: notif['title'] ?? 'Updated',
+            message: notif['message'] ?? '',
+            type: type,
+          );
           _showNotificationSnackbar(notif);
         }
       }
